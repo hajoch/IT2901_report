@@ -1,0 +1,141 @@
+\section{Testing}
+System testing or software testing, falls into something that is called “Black-box testing”. This is a method of software testing, that investigates the functionality of the application. Eg. what it does, it is simply described as this:
+It will not require to know how to code, or need any sufficient level of skill to programming when an system test is about to go down. It will neither interfere with it’s internal structure or workings. 
+
+\subsection{Testing Procedure}
+
+When you are about to conduct a test, you find a test-person. Then you tell them what the software is supposed to do. And give them the Test cases[7.2], and explain to them it is very important to think loud so we get the most out of the testing. 
+
+\subsection{Test Cases}
+
+Test cases are built around the specifications and requirements of the application. What the application is supposed to do.  
+
+\begin{center}
+\begin{tabular}{ i{4cm} ||  i{10cm}} \toprule
+\multicolumn{2}{c}{\textbf{Get Places}} \\ \hline
+ID & T-F1 \\ \hline
+Requirements & SF-1 \\ \hline
+Feature& Places are shown on the map \\ \hline
+Preconditions& \begin{enumerate} \item Flickr is up \item The Flickr group contains photos with locations \item Application is installed on device \item Device is connected to the internet \end{enumerate} \\ \hline
+Test Description& \begin{enumerate} \item Open the application \item Wait for 30 seconds \item Click on a pinpoint \item Zoom out to a world view  \end{enumerate} \\ \hline
+Expected result & The map should show some clickable pinpoints. When clicked the pinpoints should open a little box containing a thumbnail picture and small text provided by the Flickr Stedr group. \newline
+When zoomed out new places should be loaded according to what the user see. \\ \hline
+Pass/Fail criteria & The test is considered a pass if the expected result happens. The last step that need to be passed is that the place at Grenada is shown. \newline
+If there are any incosistencies with the expected result, the test should be considered a fail. \\ \hline
+Severity & High\\ \bottomrule
+\end{tabular}
+\end{center}
+
+\begin{center}
+\begin{tabular}{ i{4cm} ||  i{10cm}} \toprule
+\multicolumn{2}{c}{\textbf{Open menu}} \\ \hline
+ID & T-F2 \\ \hline
+Requirements & SF-2 \\ \hline
+Feature& Drawer menu with options is opened. \\ \hline
+Preconditions& \begin{enumerate} \item[ ]1,2,3,4 \end{enumerate} \\ \hline
+Test Description& \begin{enumerate} \item Click on the menu button \item Click on all of the icons in the menu \item Click on the menu again \end{enumerate} \\ \hline
+Expected result & When the menu button is pressed, a drawer menu should open. All of the icons in the drawer menu is also buttons and when clicked again, the menu button should close the drawer menu. \\ \hline
+Pass/Fail criteria & The test is considered a pass if the menu button opens and closes a drawer menu. Also, all of the icons should \\ \hline
+Severity & High\\ \bottomrule
+\end{tabular}
+\end{center}
+
+\begin{center}
+\begin{tabular}{ i{4cm} ||  i{10cm}} \toprule
+\multicolumn{2}{c}{\textbf{Views}} \\ \hline
+ID & T-F3 \\ \hline
+Requirements & SF-6 \\ \hline
+Feature& All the views are accessible \\ \hline
+Preconditions& \begin{enumerate} \item[ ]1,2,3,4 \item[T-F1] Get places \end{enumerate} \\ \hline
+Test Description& \begin{enumerate} \item Click on a pinpoint \item Click on the small window that appears \item Click on one of the buttons \textit{Images, Sound, Story} \item Dependent on the prevoius step, click on the buttons not yet pushed \item Click the menu button \item Click home \end{enumerate} \\ \hline
+Expected result & Which view that is selected is shown to the user by being in a different color than the two other buttons. If the button for the selected view is touched, nothing should happen. \newline
+ For every button representing a non-selected view, the user should be taken to the view as indicated by the button text. \\ \hline
+Pass/Fail criteria &The test is passed if the button: \newline[5pt]
+Image - Takes you to the image view\newline
+Story - Takes you to the story view\newline
+Sound - Takes you to the sound view.\newline[5pt]
+The selected view has a unclickable button in a different color representing the selected view.\newline
+Considered a fail if there are any inconsistencies with the criterias above. \\ \hline
+Severity & High\\ \bottomrule
+\end{tabular}
+\end{center}
+
+\begin{center}
+\begin{tabular}{ i{4cm} ||  i{10cm}} \toprule
+\multicolumn{2}{c}{\textbf{Load Content}} \\ \hline
+ID & T-F4 \\ \hline
+Requirements & SF-7 \\ \hline
+Feature& Content is loaded for the places \\ \hline
+Preconditions& \begin{enumerate} \item[T-F3] Views \end{enumerate} \\ \hline
+Test Description& \begin{enumerate} \item Click on a pinpoint(not Camera Obscura) \item Click on the description \item Go through the views as in T-F3 \item[3a] Click on all of the titles on the story \item[3b] Click on two random images \item[3c] Click on a sound \end{enumerate} \\ \hline
+Expected result &The places should be loaded with relevant and accessible content from all of the content providers.. \newline
+If some content-types aren’t provided for the specific place, the content type should be loaded but indicate that it is empty. \\ \hline
+Pass/Fail criteria &The test is considered a pass if the expected result happens. \newline
+If there are any inconsistencies with the expected result, the test should be considered a fail. \\ \hline
+Severity & High\\ \bottomrule
+\end{tabular}
+\end{center}
+
+
+\begin{center}
+\begin{tabular}{ i{4cm} ||  i{10cm}} \toprule
+\multicolumn{2}{c}{\textbf{Collection view}} \\ \hline
+ID & T-F5 \\ \hline
+Requirements & SF-8 \\ \hline
+Feature& Show a view with the stories related to a collection \\ \hline
+Preconditions& \begin{enumerate} \item[T-F2] Open menu \item[T-F4] Load Content \item[5] It exist a collection \end{enumerate} \\ \hline
+Test Description& \begin{enumerate} \item Press the menu button \item Press the Collection button \item Press a collection \end{enumerate} \\ \hline
+Expected result & When the collection button is pressed a new view should open with the list of stories related to the collection. \\ \hline
+Pass/Fail criteria & The test is considered a pass if it is possible to open the menu and access a collection with a list of stories. \\ \hline
+Severity & Medium\\ \bottomrule
+\end{tabular}
+\end{center}
+
+\begin{center}
+\begin{tabular}{ i{4cm} ||  i{10cm}} \toprule
+\multicolumn{2}{c}{\textbf{Collection map view}} \\ \hline
+ID & T-F6 \\ \hline
+Requirements & SF-8 \\ \hline
+Feature& Show places related to a collection as pinpoints in a map \\ \hline
+Preconditions& \begin{enumerate} \item[T-F2] Collection View \end{enumerate} \\ \hline
+Test Description& \begin{enumerate} \item Press the menu button \item Press the Collection button \item Press a collection \item Press the \textit{show on map}-button \end{enumerate} \\ \hline
+Expected result &When the “show on map”-button is clicked, a map view should open with related places showed as pinpoints. Pinpoints not related to the collection should not be placed on the map. \\ \hline
+Pass/Fail criteria & The test is considered a pass if all places related to a collection is exclusively shown in a map view. \\ \hline
+Severity & Medium\\ \bottomrule
+\end{tabular}
+\end{center}
+
+\begin{center}
+\begin{tabular}{ i{4cm} ||  i{10cm}} \toprule
+\multicolumn{2}{c}{\textbf{Gallery}} \\ \hline
+ID & T-F7 \\ \hline
+Requirements &  \\ \hline
+Feature& Gallery function\\ \hline
+Preconditions& \begin{enumerate} \item[T-F4] Load Content \item[ ] The application is in aplcae with a story where there are multiple images to the story. \end{enumerate} \\ \hline
+Test Description& \begin{enumerate} \item Press the story title \item If there are more pictures related to a story, press the arrows \end{enumerate} \\ \hline
+Expected result &When accessing stories with multiple pictures as content, arrows indicating the possibility to go through picture files should appear. When pressed new images should replace the old picture. \\ \hline
+Pass/Fail criteria &The test is considered a pass if the expected result happens. \newline
+If there are any inconsistencies with the expected result, the test should be considered a fail. \\ \hline
+Severity & Low\\ \bottomrule
+\end{tabular}
+\end{center}
+
+\begin{center}
+\begin{tabular}{ i{4cm} ||  i{10cm}} \toprule
+\multicolumn{2}{c}{\textbf{Upload Content}} \\ \hline
+ID & T-F8 \\ \hline
+Requirements &  SF-9\\ \hline
+Feature& Content can be uploaded to Instagram, Twitter and SoundCloud \\ \hline
+Preconditions& \begin{enumerate} \item[T-F4] Load Content \item[6] Successfully connected to the content (not story provider) providers \end{enumerate} \\ \hline
+Test Description& \begin{enumerate} \item Click on a pinpoint \item Click on the description \item Go through the views as in T-F3 \item Upload textual content to Twitter \item Upload picture to Instagram \item Upload sound to SoundCloud \end{enumerate} \\ \hline
+Expected result &The places should be loaded with relevant and accessible content from all of the content providers..\newline
+If some content-types aren’t provided for the specific place, the content type should be loaded but indicate that it is empty. \\ \hline
+Pass/Fail criteria & The test is considered a pass if the expected result happens. \newline
+If there are any inconsistencies with the expected result, the test should be considered a fail. \\ \hline
+Severity & Medium\\ \bottomrule
+\end{tabular}
+\end{center}
+
+\subsection{Test Execution}
+
+

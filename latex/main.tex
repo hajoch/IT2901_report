@@ -1,0 +1,125 @@
+\documentclass[12pt,a4paper,titlepage]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[english]{babel}
+\usepackage{xpatch}
+\usepackage{babel}
+\usepackage{titlesec}
+\usepackage{csquotes} 
+\usepackage{filecontents}
+\usepackage[style=authoryear,maxcitenames=2,backend=bibtex]{biblatex}
+\usepackage{tabulary}
+\usepackage{tabularx}
+\usepackage{lscape}
+\usepackage{rotating}
+\usepackage{longtable}
+% Pretty much all of the ams maths packages
+\usepackage{amsmath,amsthm,amssymb,amsfonts}
+% Allows you to manipulate the page a bit
+\usepackage[a4paper]{geometry}
+% Pulls the page out a bit - makes it look better (in my opinion)
+\usepackage{a4wide}
+% Removes paragraph indentation (not needed most of the time now)
+\usepackage{parskip}
+% Allows inclusion of graphics easily and configurably
+\usepackage{graphicx}
+% Provides ways to make nice looking tables
+\usepackage{booktabs}
+% Allows you to rotate tables and figures
+\usepackage{rotating}
+% Allows shading of table cells
+\usepackage{colortbl}
+% Define a simple command to use at the start of a table row to make it have a shaded background
+\newcommand{\gray}{\rowcolor[gray]{.9}}
+\usepackage{textcomp}
+% Provides commands to make subfigures (figures with (a), (b) and (c))
+\usepackage{subfigure}
+% Typesets URLs sensibly - with tt font, clickable in PDFs, and not breaking across lines
+\usepackage{url}
+% Makes references hyperlinks in PDF output
+\usepackage{hyperref}
+% Provides ways to include syntax-highlighted source code
+\usepackage{listings}
+\lstset{frame=single, basicstyle=\ttfamily}
+% Provides good access to colours
+\usepackage{color}
+\usepackage{xcolor}
+
+% Simple command I defined to allow me to mark TODO items in red
+\newcommand{\todo}[1] {\textbf{\textcolor{red}{#1}}}
+% Allows fancy stuff in the page header
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+% Vastly improves the standard formatting of captions
+\usepackage[margin=10pt,font=small,labelfont=bf, labelsep=endash]{caption}
+\newcommand{\sectionbreak}{\clearpage}
+
+\usepackage{array}
+\newcolumntype{i}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{o}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{j}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+
+
+\addbibresource{references.bib}
+
+\begin{document}
+
+	\title{IT2901 Sintef Storytelling}
+	\author{	
+			Tor Barstad
+			\texttt{torob@stud.ntnu.no}
+			\and
+			Jon-André Brurberg
+			\texttt{jonandbr@stud.ntnu.no}
+			\and
+			Hallvard Jore Christensen
+			\texttt{hallvarc@stud.ntnu.no}
+			\and
+			Øyvind Hellenes
+			\texttt{oyvihell@stud.ntnu.no}				
+			\and
+			Vegard Storm
+			\texttt{vegs@stud.ntnu.no}		
+			\and
+			Jørgen Rugelsjøen Wikdahl
+			\texttt{jorgenrw@stud.ntnu.no}			
+			}		
+		\date{\today}
+		\maketitle{}	
+
+		\pagestyle{empty}
+		\tableofcontents
+		\cleardoublepage
+		\pagestyle{plain}	
+
+\input{introduction}
+\input{prestudy}
+\input{organization}
+\input{requirements}
+\clearpage 					%This command flushes out all the queued floats waiting to be placed to avoid them being placed inapropriately in another section.
+\input{architecture}
+\clearpage 					%This command flushes out all the queued floats waiting to be placed to avoid them being placed inapropriately in another section.
+\input{testing}
+
+\printbibheading
+\printbibliography[type=book,heading=subbibliography,title={Book Sources}]
+\printbibliography[nottype=book,heading=subbibliography,title={Other Sources}]
+
+\clearpage
+\input{appendix}
+
+\section{Attachments}
+
+\begin{figure}[!h]
+\centering
+\includegraphics[width=1.3\textwidth, angle=270] {class-frontend.png}
+\caption{Class diagram for frontend}
+\end{figure}
+
+\begin{figure}[!h]
+\centering
+\includegraphics[width=1.3\textwidth, angle=270] {class-backend.jpg}
+\caption{Class diagram for frontend}
+\end{figure}
+
+\end{document}
