@@ -75,12 +75,31 @@
 \begin{document}
 \input{titlepage}
 \restoregeometry
-%\input{abstract}
+\input{abstract}
+\cleardoublepage
 
+		%Content list
 		\pagestyle{empty}
 		\tableofcontents
+		\addtocontents{toc}{~\hfill\textbf{Page}\par}
+		\chapter{}
 		\cleardoublepage
-		\pagestyle{plain}	
+		
+		%Table list
+%		\addcontentsline{toc}{section}{\listtablename}
+		\pagestyle{empty}
+		\phantomsection
+		\listoftables
+		\clearpage
+		
+		%Figure List
+		\pagestyle{empty}
+		\phantomsection
+%		\addcontentsline{toc}{section}{\listfigurename}
+		\listoffigures
+		\clearpage
+		
+\pagestyle{plain}			
 
 \input{introduction}
 \input{prestudy}
