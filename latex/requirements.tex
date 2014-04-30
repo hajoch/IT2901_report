@@ -21,28 +21,68 @@ Originally Stedr is a product developed by students at NTNU as a part of the sub
 \end{figure}
 
 \subsection{User classes and charateristics}
-The users of the program mainly divide into two categories. One is the primary user group which are using the frontend to see content. A typical user of this sort is a highschool student which is introduced to the program in the context of cultural heritage awareness. Most of these student will likely not use the program outside of the school context, but there is a possiblity that some of these students transits to the second category. Under the second category there are two user types, one is the content providers and the other is the maintainer. 
-(See another section)
+The users of the program mainly divide into two categories. One of those groups is the primary user group which are interacting with the smartphone application, frontend, to see content. A typical primary user is an highschool student which is introduced to the program in the context of cultural heritage awareness. As mentioned earlier, the broad goal of the application is to make people aware about cultural heritage. If that goal is fulfilled, some primary users of the application will hopefully transit over to become a content provider. 
 
-\subsection{Operating environment}
-The frontend application of the system is a mobile application which aims to run on both the Android and iOS platform. Because of difficulties with developing towards the iOS platform without equipment from Apple, it's still discussed how the system is going to be tested on iOS. The backend of the server running as a server application, provided by Heroku.
+\noindent
 
+A content provider has the possibility to interact with the system directly, but also he or she can choose to interact with the system more indirectly. This varying degree of interaction will hopefully lower the threshold for users transisting from content consumer to content provider, which is the overall goal of the application. 
+
+\noindent
+
+Another secondary user is the maintainter-administrator. The maintainer-administrator will use a special set of tools to approve creation of the systems places, but these tools are provided by the external system Flickr. Our internal system is communicating with that external system so that applications relevant information is sent from the external to the internal system, but in the end the external system is stand-alone and can not be controlled directly from the internal system. 
+
+\noindent
 
 \subsection{Product functions}
 
+The main features of the program for different user categories are presented as a bullet list below. All of the provided functions by the system are available to every user without the need of registration or approval by the systems maintainer-administrator with one exception relating to adding new places. In addition the user may need to registrate on external systems to make use of those features.
+
+\noindent
+
+\begin{itemize}
+\item [\textbf{Primary user}]
+\item See places on a world map
+\item Navigate the map
+\item Select places on the map, and look at stories to the related place. 
+\item Select places on the map, and look at pictures to the related place.
+\item Select places on the map, and find sounds to the related place.
+\item Select places related to pre-defined themes (i.e: art in Trondheim).
+\item Make posts to a social medium. 
+\end{itemize}
+
+\begin{itemize}
+\item [\textbf{Secondary user, content provider}]
+\item Create stories and pinpoint them so that they appear in relation to a place.
+\item Create sound and pinpoint them so that they appear in relation to a place.
+\item Create pictures and pinpoint them so that they appear in relation to a place
+\end{itemize}
+
+\begin{itemize}
+\item [\textbf{Secondary user, maintainer-administrator}]
+\item Approve content providers so they can create places.
+\end{itemize}
+
+\subsection{Operating environment}
+The frontend application of the system is a smartphone application which aims to run on the two major smartphone platforms Android (2.2 and above) and iOS. Because of difficulties with developing towards the iOS platform without equipment from Apple, the goal is to get the application to run on a unspecific versions of iOS to see that a full implementation of the application on iOS is feasible. The backend of the system, or server, should run as a cloud-based platform provided by Heroku, as the case was for the existing verison of the server. Since that service now is unavailable the new version of the backend will run as a new service instead of replacing the former one. 
+
 \subsection{Design and Implementation Constraints}
+Because of the nature of the project as a part of a course, there will be few constraints regarding the development of the system. Because there already exists functionality it's natural to constraint the system to make use of the existing code and technologies. Reimplementing them with new code or technologies are allowed, but since time is a limitied resource (approximately 20 hours per member per week) it is important to be time effective. That time effectivity and available workload is also to be seen as a design and implementation constraint. Apart from a private GitHub account, the project is to be done without funding so for the deploying a free service has to be chosen.
+
+\noindent
+
+Since the customer is a proffesional organisation, it is also important that the system behaves correctly according to licensing. The system itself is to be open source under the Berkley Software Distribution license version 3 (BSD-3). It is also important that the system handles licensing from external systems correctly, and only shares legal content.
 
 \subsection{User Documentation}
 
-\subsection{Assumptions and Dependencies}
- 
-\subsection{External Interface Requirements}
+Documentation to system users will be provided in the application itself, this documentation has to easily be editable by the maintainer-administrator which will. In additon to the user documentation there will be provided documentation for developers as an appendix in this report, and code documentation in the code itself and in the GitHub-repository. 
 
-\subsection{User Interfaces}
- 
-\subsection{Hardware Interfaces}
- 
-\subsection{Software Interfaces}
+\subsection{Assumptions and Dependencies}
+
+An important assumpton in the development of the system is that the former system delivers the functionality which is stated in the feature list given by the customer. A copy of this list can be found in the appendix.
+
+\noindent
+
+Another important assumption, is that the external systems that were implemented in the earlier systems still is functional. This is also a dependency, because changes in those external systems will make internal system malfunctioned. This can be seen as a large drawback in the system, but as the backend is to be kept to a minimal external sources have to be used for content storage and content providing.
 
 \subsection{System Features}
 
