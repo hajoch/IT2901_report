@@ -111,24 +111,24 @@ During the course of the project we experienced and overcame many challenges com
 %\cleardoublepage
 
 		%Content list
-		\pagestyle{empty}
+		\thispagestyle{empty}
 		\tableofcontents
 		\addtocontents{toc}{~\hfill\textbf{Page}\par}
 		\chapter{}
 		\cleardoublepage
-		
-		%Table list
-%		\addcontentsline{toc}{section}{\listtablename}
-		\pagestyle{empty}
-		\phantomsection
-		\listoftables
-		\clearpage
-		
+
 		%Figure List
-		\pagestyle{empty}
+		\thispagestyle{empty}
 		\phantomsection
 %		\addcontentsline{toc}{section}{\listfigurename}
 		\listoffigures
+		\clearpage
+			
+		%Table list
+%		\addcontentsline{toc}{section}{\listtablename}
+		\thispagestyle{empty}
+		\phantomsection
+		\listoftables
 		\clearpage
 		
 \pagestyle{fancy}			
