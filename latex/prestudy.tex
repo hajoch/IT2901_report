@@ -99,7 +99,15 @@ These are some of the feedback extracted from the individal tests.
 	
 	\subsection{Tools and technologies}
 		\subsubsection{Titanium vs Phonegap}
-		\subsubsection{Digitalt fortalt API}
+		\subsubsection{APIs}
+
+\paragraph{Digitalt Fortalt and Norvegiana.}
+After an evaluation in the pre-study phase we decided to switch the main API the application is using for better preformance. Here are a short summary of why:\\[4pt]
+
+In current condition, Stedr uses an API called Norvegiana. This API is basically a collection of all public APIs that can be used in collecting deifferent data. The major pros using Norvegina are the portion of information accessible from different sources including \emph{Statsarkivet, Digitalt Fortalt, Digitalt Museum} etc. There are many filtering options making Norvegina able to return all the information needed.\\
+There has been some complaints about the efficiency of the service, like from the customer when testing the service in Spain. We assume that this is caused that Norvegina sends requests to Digitalt Fortalt in intervals, with the requests being sent with a too low frequency. We think this problem might be solved by switching completely to the Digitalt Fortalt API, which sould not be too much trouble considering the existing code only makes simple calls to the API trough Norvegina. It is worth noting though that Digitalt Fortalt is originally ment for norwegian cultural heritage, which might cause problems in a potential international expansion.\\
+The functionality in the APIs, for our useage, are about the same. Where both come short is that both strictly speaking work like databases that you only can retrive information from, making them impossible to use for posting new content. This has to be solved in another way.\\ 
+
 
 	\subsection{Similar products}
 		\todo{produkter med ligjnende funksjonalitet og/eller produkter med liknende formål}
