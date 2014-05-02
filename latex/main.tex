@@ -17,13 +17,16 @@
 \usepackage{tikz}
 
 \usepackage{attachfile}
+\usepackage{pdfpages}
 
 \usepackage{tikz}
+
+\usepackage[titletoc]{appendix}% http://ctan.org/pkg/appendices
 
 %Section design
 \definecolor{gray75}{gray}{0.75}
 \newcommand{\hsp}{\hspace{20pt}}
-\titleformat{\section}[hang]{\Huge\bfseries}{\thesection\hsp\textcolor{gray75}{|}\hsp}{0pt}{\Huge\bfseries}
+\titleformat{\section}[hang]{\Huge\bfseries}{\thesection\hsp\textcolor{gray75}{|}\hsp}{0pt}{\Huge\bfseries}{\thispagestyle{plain}}
 
 \usetikzlibrary{calc}
 \usetikzlibrary{decorations.pathmorphing}
@@ -111,24 +114,24 @@ During the course of the project we experienced and overcame many challenges com
 %\cleardoublepage
 
 		%Content list
-		\pagestyle{empty}
+		\thispagestyle{empty}
 		\tableofcontents
 		\addtocontents{toc}{~\hfill\textbf{Page}\par}
 		\chapter{}
 		\cleardoublepage
-		
-		%Table list
-%		\addcontentsline{toc}{section}{\listtablename}
-		\pagestyle{empty}
-		\phantomsection
-		\listoftables
-		\clearpage
-		
+
 		%Figure List
-		\pagestyle{empty}
+		\thispagestyle{empty}
 		\phantomsection
 %		\addcontentsline{toc}{section}{\listfigurename}
 		\listoffigures
+		\clearpage
+			
+		%Table list
+%		\addcontentsline{toc}{section}{\listtablename}
+		\thispagestyle{empty}
+		\phantomsection
+		\listoftables
 		\clearpage
 		
 \pagestyle{fancy}			
@@ -142,14 +145,11 @@ During the course of the project we experienced and overcame many challenges com
 \clearpage 					%This command flushes out all the queued floats waiting to be placed to avoid them being placed inapropriately in another section.
 \input{testing}
 
-\printbibheading
-\printbibliography[type=book,heading=subbibliography,title={Book Sources}]
-\printbibliography[nottype=book,heading=subbibliography,title={Other Sources}]
-
 \clearpage
-\input{appendix}
+%\input{appendix}
 
 \section{Attachments}
+\thispagestyle{plain}
 
 \begin{figure}[!h]
 \centering
@@ -163,8 +163,78 @@ During the course of the project we experienced and overcame many challenges com
 \caption{Class diagram for frontend}
 \end{figure}
 
-\appendix
+\clearpage
+\thispagestyle{plain}
+\printbibheading
+\printbibliography[type=book,heading=subbibliography,title={Book Sources}]
+\printbibliography[nottype=book,heading=subbibliography,title={Other Sources}]
+\clearpage
 
-\section{test}
+%Appendices
+\newpage
+\pagestyle{plain}
+\begin{appendices}
 
+\section{Developers Manual}
+
+\section{Status Report Example}
+\subsection{Status Report}
+%--------------Status report-------------
+
+\newpage
+\thispagestyle{plain}
+\begin{tikzpicture}[remember picture, overlay]
+	\draw[line width = 1pt] ($(current page.north west) + (0.5in,-0.5in)$) rectangle ($(current page.south east) + (-0.5in,0.5in)$);
+\end{tikzpicture}
+
+SINTEF\\
+\begin{centering}
+Storytelling\\
+\huge{Summary Status Report}\\
+\end{centering}
+
+\vspace{1cm}
+\textbf{1. Introduction}\\
+
+The last week has been pretty busy with a lot of progress in terms of development. The last customer meeting turned out to be very constructive and the customer seemed to be satisfied with the recent development of the system.\\[6pt]
+
+\textbf{2. Progress summary}\\
+
+\href{https://docs.google.com/spreadsheet/ccc?key=0Aigjd3Z4fa8YdGhtR0tqN0d4Q19TR0FmQ2pTVTR1X1E&usp=drive_web#gid=0}{Updated Activity Plan (8)}
+
+\href{https://docs.google.com/spreadsheet/ccc?key=0AlhGbQmvU9bddHl2VWVjWHhiX3VMREc0NWY4UE5hd3c&usp=sharing}{Milestone/Gantt}\\[6pt]
+
+\textbf{3. Open / Closed problems}\\
+
+The last week has almost been problem free, and the progress has been pretty good. Regarding the continued development there has been a delay, because of some content which haven’t been made available to the group from the customer.\\
+
+In the comming week it will be difficult to keep up the momentum from last week, as Easter is approaching (unavailability because of travelling) and a couple of the group members are in China for a school excursion. The group members that still are available will therefore focus on few assignments which they are familiar with from earlier.\\[6pt]
+
+\textbf{4. Planned work for next period}\\
+
+\href{https://docs.google.com/spreadsheet/ccc?key=0AqgF_sCiXohadDQ4SlZKTTZ1ZWZ6djF2dllaZGRPSGc&usp=drive_web#gid=0}{New Activity Plan (9)}
+
+\textbf{5. Updated risk analysis}\\
+
+\href{https://docs.google.com/spreadsheet/ccc?key=0AlhGbQmvU9bddGs0M0tBd3ZaNUxvMnBaQnNLb0FoWnc&usp=drive_web#gid=0}{Risk analysis}
+
+\clearpage
+
+%-------------------------------------------
+\subsection{Activity Plan}
+\includepdf[pages={1}, angle=270]{res/ActivityPlan_VI_Updated.pdf}
+\subsection{Risk Analysis}
+\includepdf[pages={1,2,3}]{res/Risk_analysis.pdf}
+
+
+\section{Meetings}
+\subsection{Group Meetings}
+The summarys from the meetings are written in norwegian, and translating them for the report was not something we prioritized.\\
+Here is an example:
+\includepdf[pages={1,2}]{res/Motereferat_05-02-14.pdf}
+
+\subsection{Customer Meetings}
+\subsection{Supervisor Meetings}
+
+\end{appendices}
 \end{document}
