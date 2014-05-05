@@ -34,6 +34,25 @@
 %Header
 \usepackage{fancyhdr}
 
+
+%preface signature design
+\usepackage{array}
+\newcommand\Signature[7]{\par\bigskip
+  \setlength\tabcolsep{0pt}
+  \begin{tabular}{@{\hspace{.05\textwidth}}>{\centering\arraybackslash}p{.4\textwidth}
+      @{\hspace*{.1\textwidth}}>{\centering\arraybackslash}p{.4\textwidth}@{\hspace{.05\textwidth}}}
+  \multicolumn{2}{c}{#1, \today} \\[10ex]
+  \rule{.4\textwidth}{0.4pt} & \rule{.4\textwidth}{0.4pt} \\
+  #2 & #3 \\[10ex]
+  \rule{.4\textwidth}{0.4pt} & \rule{.4\textwidth}{0.4pt} \\
+  #4 & #5 \\[10ex]
+  \rule{.4\textwidth}{0.4pt} & \rule{.4\textwidth}{0.4pt} \\
+  #6 & #7 \\[10ex]
+%  \multicolumn{2}{c}{\rule{.4\textwidth}{0.4pt}} \\
+ % \multicolumn{2}{c}{#6}
+\end{tabular}
+\par
+}
 \lhead{}
 \rhead{\leftmark}
 
@@ -103,6 +122,12 @@
 
 \begin{document}
 \input{titlepage}
+
+\section*{Preface}
+\thispagestyle{empty}
+\lipsum[7]
+\Signature{Trondheim}{Hallvard Jore Christensen}{Øyvind Hellenes}{Jon-Andre Brurberg}{Tor Barstad}{Vegard Storm}{Jørgen Rugelsjøen Wikdahl}
+\cleardoublepage
 
 \begin{abstract}
 Through this project SINTEF wanted to further develop a multi-platform application mainly for handheld devices called Stedr. The aim of the project was to add more important functionality to the application, increase usability and generally improving it in all aspects. In this report we will describe the whole process from preliminary work and planning, the process and then present the final product with testresults etc. enclosed. The application is written in Titanium Studio using mainly XML, Java and Javascript. The application makes use of many different APIs and frameworks to make use of existing services to reduce the nessecary maintanance. This was requested by the customer.
@@ -177,6 +202,8 @@ During the course of the project we experienced and overcame many challenges com
 \begin{appendices}
 
 \section{Developers Manual}
+\subsection{Frontend}
+\subsection{Backend}
 
 \section{Status Report Example}
 \subsection{Status Report}
