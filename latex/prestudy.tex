@@ -23,7 +23,7 @@ Since the application already is considered a working prototype, we will provide
 		\subsubsection{Limitations}
 There are some limitations to the system that needs to be further developed, and some that probably would require total architectural review of the project to be fixed. Our task is to continue the development of the applicaton. An overview of the features we are going to improve are discussed in the requirements-section. Flaws that arised during the development which requires a new architecture will be discussed in the conclusions-section under Recommendations.
 
-		\subsubsection{Evaluation}
+		\subsubsection{App evaluation}
 		
 After the first meetings we concluded that the best way to proceed is to evaluate the existing system, to uncover potential issues and flaws.
 Therefor we decided that everyone should individually do a usability test when exploring the app for the first time. Here are a short summary of all our reports:\\[3pt]
@@ -74,13 +74,11 @@ These are some of the feedback extracted from the individal tests.
 
 	In response to these results, our customer thought this survey was helpful, but it didn't change her mind. She still wanted us to integrate Stedr with Soundcloud, even though the user feedback wasn't positive about this feature. We of course respect this decision, but we felt it was our duty to do this research anyway.
 	
-	\subsection{Desired solution}
-	
-	\todo{Implementere requirements i en liten tekst som forklarer hva vi ønsket å oppnå med applikasjonen}
-	
 	\subsection{Tools and technologies}
-		\subsubsection{Titanium vs Phonegap}
+	
 		\subsubsection{APIs}
+		
+		There was a wish from the customer that we should use other existing services as mush as possible instead of having our own database and a comprehencive backend. The result of this is that the project will be dependent on many different APIs to function properly. As a result of this we spent alot of time researching different APIs. The existing system had already Norvegina, Flickr, Instagram and twitter, though some of them needed a fresh up. In addidtion our both us and our customer had ideas to expand functionality which ment more APIs. We did research on alot of different APIs, many of them we ended up not using, among them Google Places, Wikipedia, NRK. 
 		
 \paragraph{Digitalt Fortalt and Norvegiana.}
 After an evaluation in the pre-study phase we decided to switch the main API the application is using for better preformance. Here are a short summary of why:\\[4pt]
@@ -89,6 +87,9 @@ In current condition, Stedr uses an API called Norvegiana. This API is basically
 There has been some complaints about the efficiency of the service, like from the customer when testing the service in Spain. We assume that this is caused that Norvegina sends requests to Digitalt Fortalt in intervals, with the requests being sent with a too low frequency. We think this problem might be solved by switching completely to the Digitalt Fortalt API, which sould not be too much trouble considering the existing code only makes simple calls to the API trough Norvegina. It is worth noting though that Digitalt Fortalt is originally ment for norwegian cultural heritage, which might cause problems in a potential international expansion.\\
 The functionality in the APIs, for our useage, are about the same. Where both come short is that both strictly speaking work like databases that you only can retrive information from, making them impossible to use for posting new content. This has to be solved in another way.\\ 
 
-
 	\subsection{Similar products}
-		\todo{produkter med ligjnende funksjonalitet og/eller produkter med liknende formål}
+		
+A natural part of the prestudy was to explore the market for systems providing similar services. Though we did not find any identical products in terms of purpose and execution, there were a lot of products with some similar functions. 
+
+\paragraph{Byguiden}
+

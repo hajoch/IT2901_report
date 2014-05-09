@@ -34,9 +34,13 @@
 %Header
 \usepackage{fancyhdr}
 
+\long\def\/*#1*/{}
 
 %preface signature design
 \usepackage{array}
+
+\/*
+
 \newcommand\Signature[7]{\par\bigskip
   \setlength\tabcolsep{0pt}
   \begin{tabular}{@{\hspace{.05\textwidth}}>{\centering\arraybackslash}p{.4\textwidth}
@@ -53,6 +57,9 @@
 \end{tabular}
 \par
 }
+
+*/
+
 \lhead{}
 \rhead{\leftmark}
 
@@ -126,7 +133,8 @@
 \section*{Preface}
 \thispagestyle{empty}
 \lipsum[7]
-\Signature{Trondheim}{Øyvind Hellenes}{Vegard Storm}{Tor Barstad}{Jørgen Rugelsjøen Wikdahl}{Jon-Andre Brurberg}{Hallvard Jore Christensen}
+%\Signature{Trondheim}{Øyvind Hellenes}{Vegard Storm}{Tor Barstad}{Jørgen Rugelsjøen Wikdahl}{Jon-Andre Brurberg}{Hallvard Jore Christensen}
+%\renewcommand\Signature[7]{}
 \cleardoublepage
 
 \begin{abstract}
@@ -171,7 +179,8 @@ During the course of the project we experienced and overcame many challenges com
 \input{implementation}
 \clearpage
 \input{testing}
-\input{evaluation}
+
+%\input{evaluation}
 
 \clearpage
 %\input{appendix}
