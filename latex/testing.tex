@@ -11,6 +11,7 @@ When you are about to conduct a test, you find a test-person. Then you tell them
 
 Test cases are built around the specifications and requirements of the application. What the application is supposed to do.  
 
+\begin{table}[htp]
 \begin{center}
 \begin{tabular}{ i{4cm} ||  i{10cm}} \toprule
 \multicolumn{2}{c}{\textbf{Get Places}} \\ \hline
@@ -26,7 +27,12 @@ If there are any incosistencies with the expected result, the test should be con
 Severity & High\\ \bottomrule
 \end{tabular}
 \end{center}
+\caption{Test Case: Get Places}
+\label{tab:Test Case: Get Places}
+\end{table}
 
+
+\begin{table}[htp]
 \begin{center}
 \begin{tabular}{ i{4cm} ||  i{10cm}} \toprule
 \multicolumn{2}{c}{\textbf{Open menu}} \\ \hline
@@ -40,7 +46,12 @@ Pass/Fail criteria & The test is considered a pass if the menu button opens and 
 Severity & High\\ \bottomrule
 \end{tabular}
 \end{center}
+\caption{Test Case: Open Menu}
+\label{tab:Test Case: Open Menu}
+\end{table}
 
+
+\begin{table}[htp]
 \begin{center}
 \begin{tabular}{ i{4cm} ||  i{10cm}} \toprule
 \multicolumn{2}{c}{\textbf{Views}} \\ \hline
@@ -60,7 +71,12 @@ Considered a fail if there are any inconsistencies with the criterias above. \\ 
 Severity & High\\ \bottomrule
 \end{tabular}
 \end{center}
+\caption{Test Case:  Views}
+\label{tab:Test Case: Views}
+\end{table}
 
+
+\begin{table}[htp]
 \begin{center}
 \begin{tabular}{ i{4cm} ||  i{10cm}} \toprule
 \multicolumn{2}{c}{\textbf{Load Content}} \\ \hline
@@ -76,8 +92,13 @@ If there are any inconsistencies with the expected result, the test should be co
 Severity & High\\ \bottomrule
 \end{tabular}
 \end{center}
+\caption{Test Case: Load Content}
+\label{tab:Test Case: Load Content}
+\end{table}
 
 
+
+\begin{table}[htp]
 \begin{center}
 \begin{tabular}{ i{4cm} ||  i{10cm}} \toprule
 \multicolumn{2}{c}{\textbf{Collection view}} \\ \hline
@@ -91,7 +112,12 @@ Pass/Fail criteria & The test is considered a pass if it is possible to open the
 Severity & Medium\\ \bottomrule
 \end{tabular}
 \end{center}
+\caption{Test Case: Collection View}
+\label{tab:Test Case: Collection View}
+\end{table}
 
+
+\begin{table}[htp]
 \begin{center}
 \begin{tabular}{ i{4cm} ||  i{10cm}} \toprule
 \multicolumn{2}{c}{\textbf{Collection map view}} \\ \hline
@@ -105,7 +131,12 @@ Pass/Fail criteria & The test is considered a pass if all places related to a co
 Severity & Medium\\ \bottomrule
 \end{tabular}
 \end{center}
+\caption{Test Case: Collect Map View}
+\label{tab:Test Case: Collect Map View}
+\end{table}
 
+
+\begin{table}[htp]
 \begin{center}
 \begin{tabular}{ i{4cm} ||  i{10cm}} \toprule
 \multicolumn{2}{c}{\textbf{Gallery}} \\ \hline
@@ -120,7 +151,12 @@ If there are any inconsistencies with the expected result, the test should be co
 Severity & Low\\ \bottomrule
 \end{tabular}
 \end{center}
+\caption{Test Case: Gallery}
+\label{tab:Test Case: Gallery}
+\end{table}
 
+
+\begin{table}[htp]
 \begin{center}
 \begin{tabular}{ i{4cm} ||  i{10cm}} \toprule
 \multicolumn{2}{c}{\textbf{Upload Content}} \\ \hline
@@ -136,12 +172,90 @@ If there are any inconsistencies with the expected result, the test should be co
 Severity & Medium\\ \bottomrule
 \end{tabular}
 \end{center}
+\caption{Test Case: Upload Content}
+\label{tab:Test Case: Upload Content}
+\end{table}
+
 
 \subsection{Test Execution}
 \subsubsection{Acceptance Testing}
 Acceptance testing is one of the last levels of the software testing process. The purpose of such testing is to evaluate the system's compliance with the given requirements to check wether is is acceptable for delivery. Hence the name accepance testing.
 
-\paragraph{User Acceptance testing}
+
+\subsubsection{NFR testing}
+It is important for the project that our result meets the projects main non-functional requirements, described in the ``Product quality'' section of the SRS chapter [chapter 4.12], for it to be considered a success. A problem with non-functional requirements in general is that they might be difficult to test properly. \todo{Hmmmm, what to write}
+
+\paragraph{Compability}
+
+\paragraph{Performance Efficiency}
+There have been made big improvements to the systems core to improve the application's efficiency, this should cause the application to use no more than 300 seconds to pull new content from the APIs. The efficiency was tested by adding new content and recording 10 times with different content posted at different times. By measuring the individual response times and calculating the average result we will get a rough estimate.\\
+
+\begin{table}[htp]
+\begin{center}
+	\begin{tabular}{ | l | l | l | r | }
+	\hline
+	 \#	 	& Content 		& Time a day 		& Result \\ \hline
+	 1&&&\\ \hline
+	 2&&&\\ \hline
+	 3&&&\\ \hline
+	 4&&&\\ \hline
+	 5&&&\\ \hline
+	 6&&&\\ \hline
+	 7&&&\\ \hline
+	 8&&&\\ \hline
+	 9&&&\\ \hline
+	 10&&&\\ 
+	 \hline
+ 	 \end{tabular}
+\end{center}
+\caption{Performance Efficiency: Publishing New Content}
+\label{tab:Performance Efficiency: Publishing New Content}
+\end{table}
+
+Average:\\
+
+
+Another important part of the performance efficiency are the application's data usage. Blowing the users' data limit and potentially taking a large part in increasing their phone-bill is something we want to avoid, and to avoid that we have implemented a data usage restraint.
+
+
+Through this equation we tested the data usage to make sure our application met our standard. We measured this on 5 different phones while roaming not connected to any wifi-hotspots while running the app, where we hoped to get consistent  and reasonable results followig our model.\\
+
+
+\paragraph{Reliability}
+
+
+\paragraph{Portability}
+
+The multiplatform aspect of the project has played a major part in the development and have played a large part in our choice of environment and frameworks. What we want to achieve is a reasonable consistency through different platforms and versions. We have throughout the development process tested it with many different viritual devices on different settings, but the most valuable ones are the ones performed on the physical devices at our disposal.\\
+
+\begin{table}[htp]
+\begin{center}
+	\begin{tabular}{ | l | l | l | r | }
+	\hline
+	 \#	& Platform (version)	&Device			& Notes \\ \hline
+	 1	&Android (4.4.2 KitKat)	&LG Nexus 5			&\\ \hline
+	 2	&Android (4.3 Jelly Bean)	&Samsung Galaxy SII	&\\ \hline
+	 3&&&\\ \hline
+	 4&&&\\ \hline
+	 5&&&\\ \hline
+	 6&&&\\ \hline
+	 7&&&\\ \hline
+	 8&&&\\ \hline
+	 9&&&\\ \hline
+	 10&&&\\ 
+	 \hline
+	 \end{tabular}
+\end{center}
+\caption{Portability: Data Usage}
+\label{tab:Portability: Data Usage}
+\end{table}
+
+
+\/*
+
+\subsubsection{Acceptance testing}
+
+
 
 \begin{center}
 \begin{tabular}{ i{4cm} ||  i{10cm}} \toprule
@@ -153,4 +267,6 @@ Result & The user had little issue doing the test, without hesitation or any que
 Verdict & Passed \\ \bottomrule
 \end{tabular}
 \end{center}
+
+*/
 
