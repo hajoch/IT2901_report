@@ -118,6 +118,13 @@
 \usepackage[margin=10pt,font=small,labelfont=bf, labelsep=endash]{caption}
 \newcommand{\sectionbreak}{\clearpage}
 
+%Developersguide
+\usepackage{pslatex,palatino,avant,graphicx,color}
+%\usepackage[margin=2cm]{geometry}
+
+\usepackage{caption}
+\DeclareCaptionLabelFormat{blank}{}
+
 \usepackage{array}
 \newcolumntype{i}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
 \newcolumntype{o}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
@@ -214,9 +221,11 @@ During the course of the project we experienced and overcame many challenges com
 \pagestyle{plain}
 \begin{appendices}
 
-\section{Developers Manual}
-\subsection{Frontend}
-\subsection{Backend}
+%\section{Developers Manual}
+%\subsection{Frontend}
+%\subsection{Backend}
+\input{developersguide}
+
 
 \section{Status Report Example}
 \subsection{Status Report}

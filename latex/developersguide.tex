@@ -1,10 +1,14 @@
-\documentclass[11pt,a4paper,oneside]{article}
+
+\/*
+%\documentclass[11pt,a4paper,oneside]{article}
 
 \usepackage{pslatex,palatino,avant,graphicx,color}
 \usepackage[margin=2cm]{geometry}
-\usepackage{hyperref}
+%\usepackage{hyperref}
 
-\begin{document}
+%\begin{document}
+*/
+
 
 \section{Developers Guide}
 This introductury developers guide, aims to make a developer able to set up Stedr so that the developer gets an overview of how the system works and also how the developer can get started programming. The first part of the guide is about the backend while the second part is about the frontend. Both of the guides needs to be completed to get the example program running, and the backend part has to be completed before the frontend part. 
@@ -105,8 +109,9 @@ If this is correct,  \href{http://127.0.0.1:9000/hello.json?name=world}{http://1
 
 Normally you would commit this to the git-repository on GitHub, and if the new functionality is to be a part of the running server it should also be commited or deployed to Heroku. This is done by pushing the server to \texttt{git@heroku.com:stedr-beta.git}. Note that in order to push to the server directly, you will need contributor access to stedr-beta.herokuapp.com. If this isn't available or provided upon request you can create a new Heroku instance, but then the request URL destinations have to be changed in the smartphone application.
 
-\section{Frontend}
+\subsection{Frontend}
 
 \dots
 
-\end{document}
+
+%\end{document}
