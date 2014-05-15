@@ -183,6 +183,10 @@ Severity & Medium\\ \bottomrule
 \subsubsection{Acceptance Testing}
 Acceptance testing is one of the last levels of the software testing process. The purpose of such testing is to evaluate the system's compliance with the given requirements to check wether is is acceptable for delivery. Hence the name accepance testing.
 
+On may 14. during one of our last meetings we sat down with Jaqueline Floch for the final acceptace test of our system. Since the project has been more based on furter developing features than improving the graphical user interface and increasing usability, we had a more feature based acceptance testing where we went through the requirement list. Not to say that usability is not as important, but in addition to have had less focus than the new features, our customer have recieved the latest build almost every week in the later stages of the project. Through this, the customer have conducted something similar to a usability based acceptance test regurlary throughout the project, to which we recieved feedback \todo{(Examples of feedback can be found in Appendix X)}. Based on this we found usability based user acceptance test, which we know is the way many of the other groups have chosen to handle the test, to be redundant.
+The test was conducted by going through the requirement list sorted by priority and individually recieving a verdict on acceptance. The individual requirement either revieved \texttt{Pass, fail, outdated} or \texttt{cancel} if the requirement was pulled. The latter was the case on a lot of the requirements with lower priotity since we had little time and the customer wanted us to focus on the more important tasks.
+
+The result of the acceptance test are listed below:\\
 
 \subsubsection{NFR testing}
 It is important for the project that our result meets the projects main non-functional requirements, described in the ``Product quality'' section of the SRS chapter [chapter 4.12], for it to be considered a success. A problem with non-functional requirements in general is that they might be difficult to test properly. \todo{Hmmmm, what to write}
@@ -192,7 +196,7 @@ It is important for the project that our result meets the projects main non-func
 \paragraph{Performance Efficiency}
 We have greatly improved the core of the system to boost the efficiency of the application, this should cause the application to use no more than 300 seconds to pull new content from the APIs. The efficiency was tested by adding new content and recording 10 times with different content posted at different times. By measuring the individual response times and calculating the average result we will get a rough estimate.\\
 
-\begin{table}[htp]
+\begin{table}[!htp]
 \begin{center}
 	\begin{tabular}{ | l | l | l | r | }
 	\hline
@@ -230,7 +234,7 @@ Through this equation we tested the data usage to make sure our application met 
 
 The multiplatform aspect of the project has played a major part in the development and have played a large part in our choice of environment and frameworks. What we want to achieve is a reasonable consistency through different platforms and versions. We have throughout the development process tested it with many different viritual devices on different settings, but the most valuable ones are the ones performed on the physical devices at our disposal.\\
 
-\begin{table}[htp]
+\begin{table}[!htp]
 \begin{center}
 	\begin{tabular}{ | l | l | l | r | }
 	\hline
