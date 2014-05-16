@@ -183,30 +183,44 @@ Severity & Medium\\ \bottomrule
 \subsubsection{Acceptance Testing}
 Acceptance testing is one of the last levels of the software testing process. The purpose of such testing is to evaluate the system's compliance with the given requirements to check wether is is acceptable for delivery. Hence the name accepance testing.
 
+On may 14. during one of our last meetings we sat down with Jaqueline Floch for the final acceptace test of our system. Since the project has been more based on furter developing features than improving the graphical user interface and increasing usability, we had a more feature based acceptance testing where we went through the requirement list. Not to say that usability is not as important, but in addition to have had less focus than the new features, our customer have recieved the latest build almost every week in the later stages of the project. Through this, the customer have conducted something similar to a usability based acceptance test regurlary throughout the project, to which we recieved feedback \todo{(Examples of feedback can be found in Appendix X)}. Based on this we found usability based user acceptance test, which we know is the way many of the other groups have chosen to handle the test, to be redundant.
+The test was conducted by going through the requirement list sorted by priority and individually recieving a verdict on acceptance. The individual requirement either revieved \texttt{Pass, fail, outdated} or \texttt{cancel} if the requirement was pulled. The latter was the case on a lot of the requirements with lower priotity since we had little time and the customer wanted us to focus on the more important tasks.
+
+The result of the acceptance test are listed below:\\
+
+\includepdf[%
+ 	pages={-},
+	offset=0in 0in,%
+	addtolist={%
+		\thepage, table, {Acceptance Testing}, tab:AcceptanceTest
+	},
+	]{res/AcceptanceTesting_Requirements.pdf}
 
 \subsubsection{NFR testing}
-It is important for the project that our result meets the projects main non-functional requirements, described in the ``Product quality'' section of the SRS chapter [chapter 4.12], for it to be considered a success. A problem with non-functional requirements in general is that they might be difficult to test properly. \todo{Hmmmm, what to write}
+It is important for the project that our result meets the projects main non-functional requirements, described in the ``Product quality'' section of the SRS chapter \todo{chapter 4.12}, for it to be considered a success. 
 
 \paragraph{Compability}
 
 \paragraph{Performance Efficiency}
 We have greatly improved the core of the system to boost the efficiency of the application, this should cause the application to use no more than 300 seconds to pull new content from the APIs. The efficiency was tested by adding new content and recording 10 times with different content posted at different times. By measuring the individual response times and calculating the average result we will get a rough estimate.\\
 
-\begin{table}[htp]
+\begin{table}[!htp]
 \begin{center}
 	\begin{tabular}{ | l | l | l | r | }
 	\hline
 	 \#	 	& Content 		& Time a day 		& Result \\ \hline
-	 1&&&\\ \hline
-	 2&&&\\ \hline
-	 3&&&\\ \hline
-	 4&&&\\ \hline
-	 5&&&\\ \hline
-	 6&&&\\ \hline
-	 7&&&\\ \hline
-	 8&&&\\ \hline
-	 9&&&\\ \hline
-	 10&&&\\ 
+	 1		&Instagram		& 14:40			& \texttt{1 sec} \\ \hline
+	 2		&Instagram		& 10:55			& \texttt{1 sec} \\ \hline
+	 3		&Instagram		& 14:45			& \texttt{1 sec} \\ \hline
+	 4		&Tweet		& 14:16			& \texttt{19 sec} \\ \hline
+	 5		&Tweet		& 14:18			& \texttt{20 sec} \\ \hline
+	 6		&Tweet		& 10:40			& \texttt{20 sec} \\ \hline
+	 7		&Story		& 15:26			& \texttt{133 sec}\\ \hline
+	 8		&Story		& 16:15			& \texttt{10 sec}\\ \hline
+	 9		&Story 		& 11:00			& \texttt{104 sec}\\ \hline
+	 10		&Story		& 15:48			& \texttt{135 sec}\\ \hline
+	 11		&Story		& 16:03			& \texttt{107 sec}\\ \hline
+	 12		&Story		& 19:01			& \texttt{132 sec}\\ 
 	 \hline
  	 \end{tabular}
 \end{center}
@@ -214,14 +228,30 @@ We have greatly improved the core of the system to boost the efficiency of the a
 \label{tab:Performance Efficiency: Publishing New Content}
 \end{table}
 
-Average:\\
+Since much of the test content had relatively consistent results we did not think more tests was needed. The Instagram images appeared almost instantly ( 1 second) consistently, since we completed the tests manualy, we could not measure finer times, something we thought was not needed due to the nature of the tests. The twitter content were a little slower as expected, but did also appear consistantly at a reasonable time averaging in just under 20 seconds. As for the stories we published through Digitalt Fortalt, the times were very inconsistent. In three of the tests (\# 7, \#10 and \#12), which was the longest ones, the content had to be uploaded to DF as well as being published, this probably added to the time. All the other tests were performed with the content already uploaded, just to be published, but we still recorded a massive swing in results ranging from \texttt{10 seconds} (\#8) to \texttt{105 seconds} (\#9).
 
 
-Another important part of the performance efficiency are the application's data usage. Blowing the users' data limit and potentially taking a large part in increasing their phone-bill is something we want to avoid, and to avoid that we have implemented a data usage restraint.
+Average: 
+\begin{equation}
+\frac{133 + 10 + 104 + 135 + 107 + 132}{6} = {103.5}
+\end{equation}
+
+With all results clocking in under 150 secons, and our goal being under 300 seconds, we are very pleased with the results and can happily see our app passing this test. Considering the version of the app we recieved sometimes needed multiple days for the results to appea, it is needless to say there have been a massive improvement.
 
 
-Through this equation we tested the data usage to make sure our application met our standard. We measured this on 5 different phones while roaming not connected to any wifi-hotspots while running the app, where we hoped to get consistent  and reasonable results followig our model.\\
+Another important part of the performance efficiency are the application's data usage. Blowing the users' data limit and potentially taking a large part in increasing their phone-bill is something we want to avoid, and to avoid that we have implemented a data usage restraint. This restraint is set through the equation described in \todo{4.12.2}.
 
+We tested the data usage to make sure our application met our standard. We measured this roaming unconnected to any wifi-hotspots while running the app.\\
+
+\emph{Quick session}\\
+Opening map: \texttt{55.74 kB}\\
+Entering place with only one story: \texttt{+ 6.07 kB}
+
+\emph{Browsing session}\\
+Browsing map over Trondheim: \texttt{1.64 MB}\\
+Entering place with 6 stories and 2 instagram pictures: \texttt{+ 0.02 MB}
+
+We found these results to be pretty reasonable. The app does not download more content than necassary, and the results seems really consistent compared to the experiences we have had using the application.
 
 \paragraph{Reliability}
 
@@ -230,13 +260,13 @@ Through this equation we tested the data usage to make sure our application met 
 
 The multiplatform aspect of the project has played a major part in the development and have played a large part in our choice of environment and frameworks. What we want to achieve is a reasonable consistency through different platforms and versions. We have throughout the development process tested it with many different viritual devices on different settings, but the most valuable ones are the ones performed on the physical devices at our disposal.\\
 
-\begin{table}[htp]
+\begin{table}[!htp]
 \begin{center}
 	\begin{tabular}{ | l | l | l | r | }
 	\hline
 	 \#	& Platform (version)	&Device			& Notes \\ \hline
-	 1	&Android (4.4.2 KitKat)	&LG Nexus 5			&\\ \hline
-	 2	&Android (4.3 Jelly Bean)	&Samsung Galaxy SII	&\\ \hline
+	 1	&Android (4.4.2 KitKat)	&LG Nexus 5			& Works prefectly\\ \hline
+	 2	&Android (4.3 Jelly Bean)	&Samsung Galaxy SII	& No notable differences or bugs\\ \hline
 	 3&&&\\ \hline
 	 4&&&\\ \hline
 	 5&&&\\ \hline
