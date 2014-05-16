@@ -26,7 +26,7 @@ There are some limitations to the system that needs to be further developed, and
 		\subsubsection{App evaluation}
 		
 After the first meetings we concluded that the best way to proceed is to evaluate the existing system, to uncover potential issues and flaws.
-Therefor we decided that everyone should individually do a usability test when exploring the app for the first time. Here are a short summary of all our reports:\\[3pt]
+Therefor we decided that everyone should individually do a usability test when exploring the app for the first time. Here are a short summary of all our reports:
 
 When opening the application the first major issue most of us experience is how slow the app loads, with little feedback that something is actually working in the background. Another thought that generally comes to mind is \emph{I don't understand the apps function when opening it without prior knowledge}. What happens is that you get a map with tags you could click on, making you believe the apps function is to bring it when visiting a town (not Trondheim in particular) and want to explore historical monuments and get wikipedia like facts. When clicking on tags you get to the location-specific page, and there are displayed content from instagram. Some of us found this social feature not to have very obvious intentions, it can seem like theres added social interactions to the applications just because it is popular. You would want actual and useful information about the places to be the first thing displayed and get confused when suddenly a lot of instagram photos with random people posing with the attraction appear. Our first impression is that this social part have to offer something more interesting to be relevant at this point. There is added a nice touch with a slight gradient to white i the bottom indicating that you can scroll down for more content. When the phone is turned (switched to landscape mode) there are issues however, there are no scroll function here limiting the content available and the images are cropped. Also if there is lot of text added in the instagram feed, this and hashtags disappears. The way to collect images from instagram to the application also seems to be less than optimal when sometimes completely irrelevant content are displayed. When tweeting there are no limitations on length, which causes problems when trying to post tweets over 140 characters.\\
 These are some of the feedback extracted from the individal tests. 
@@ -70,7 +70,7 @@ These are some of the feedback extracted from the individal tests.
 	\item ”Yes, it sounds like a good idea.”
 \end{itemize}
 
-	The general consensus was very positive about Stedr. Everyone liked the idea, but some were sceptical in regards to the social features that was purposed.\\
+	The general consensus was very positive about Stedr. Everyone liked the idea, but some were sceptical in regards to the social features that was purposed.
 
 	In response to these results, our customer thought this survey was helpful, but it didn't change her mind. She still wanted us to integrate Stedr with Soundcloud, even though the user feedback wasn't positive about this feature. We of course respect this decision, but we felt it was our duty to do this research anyway.
 	
@@ -81,11 +81,14 @@ These are some of the feedback extracted from the individal tests.
 		There was a wish from the customer that we should use other existing services as mush as possible instead of having our own database and a comprehencive backend. The result of this is that the project will be dependent on many different APIs to function properly. As a result of this we spent alot of time researching different APIs. The existing system had already Norvegina, Flickr, Instagram and twitter, though some of them needed a fresh up. In addidtion our both us and our customer had ideas to expand functionality which ment more APIs. We did research on alot of different APIs, many of them we ended up not using, among them Google Places, Wikipedia, NRK. 
 		
 \paragraph{Digitalt Fortalt and Norvegiana.}
-After an evaluation in the pre-study phase we decided to switch the main API the application is using for better preformance. Here are a short summary of why:\\[4pt]
 
-In current condition, Stedr uses an API called Norvegiana. This API is basically a collection of all public APIs that can be used in collecting deifferent data. The major pros using Norvegina are the portion of information accessible from different sources including \emph{Statsarkivet, Digitalt Fortalt, Digitalt Museum} etc. There are many filtering options making Norvegina able to return all the information needed.\\
-There has been some complaints about the efficiency of the service, like from the customer when testing the service in Spain. We assume that this is caused that Norvegina sends requests to Digitalt Fortalt in intervals, with the requests being sent with a too low frequency. We think this problem might be solved by switching completely to the Digitalt Fortalt API, which sould not be too much trouble considering the existing code only makes simple calls to the API trough Norvegina. It is worth noting though that Digitalt Fortalt is originally ment for norwegian cultural heritage, which might cause problems in a potential international expansion.\\
-The functionality in the APIs, for our useage, are about the same. Where both come short is that both strictly speaking work like databases that you only can retrive information from, making them impossible to use for posting new content. This has to be solved in another way.\\ 
+After an evaluation in the pre-study phase we decided to switch the main API the application is using for better preformance. Here are a short summary of why:
+
+In current condition, Stedr uses an API called Norvegiana. This API is basically a collection of all public APIs that can be used in collecting deifferent data. The major pros using Norvegina are the portion of information accessible from different sources including \emph{Statsarkivet, Digitalt Fortalt, Digitalt Museum} etc. There are many filtering options making Norvegina able to return all the information needed.
+
+There has been some complaints about the efficiency of the service, like from the customer when testing the service in Spain. We assume that this is caused that Norvegina sends requests to Digitalt Fortalt in intervals, with the requests being sent with a too low frequency. We think this problem might be solved by switching completely to the Digitalt Fortalt API, which sould not be too much trouble considering the existing code only makes simple calls to the API trough Norvegina. It is worth noting though that Digitalt Fortalt is originally ment for norwegian cultural heritage, which might cause problems in a potential international expansion.
+
+The functionality in the APIs, for our useage, are about the same. Where both come short is that both strictly speaking work like databases that you only can retrive information from, making them impossible to use for posting new content. This has to be solved in another way.
 
 	\subsection{Similar products}
 		
