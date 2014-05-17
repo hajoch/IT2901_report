@@ -255,6 +255,96 @@ We found these results to be pretty reasonable. The app does not download more c
 
 \paragraph{Reliability}
 
+Testing of components was done by feeding test cases to the components, and when accepted these new components was added to a running server instance that acted as a beta. The beta server was deployed at the 9th of April and has since been monitored to record uptime and errors. Shortly after Easter the old server was exchanged with the new one so that the customer could use new features, but also so that it was possible to monitor how the server performed under the expected normal use.
+
+A shortcomming to the testdata below is that each time new features was deployed to the server, the server was restarted. Because of this, the longest interval the server has been running uninterupted is approximately one week. 
+
+\emph{Maturity}\\
+The testing of maturity was done by analysing the data recorded in comparison to the feedback we got from the customer. Also, there was done an additional  test where specific task were completed. Since maturity considers the system under normal use the additional test was not a stress test in terms of using the system untils it broke, but using the system at a relatively high frequency and noting the number of incidents.
+
+To simulate users we made a testing program which made a total of 500 requests over a short period of time ($<5 minutes$). This test was done eight times over a single day, but with random rest periods for the server.  If the server returned an error this was noted. 
+
+\begin{table}[!htp]
+\begin{center}
+	\begin{tabular}{ | l | l | l | r | }
+	\hline
+	\#	&Time since last test 	&Number of errors	& Notes \\ \hline
+	1	&NA				& 1 & Places do not load. This also disables all other content retrievers\\ \hline
+	2	&30 minutes		& 0 & Stories do not load. Does not affect other parts of the system\\ \hline
+	3	&60 minutes		& 1 & Instagram pictures do not load. Does not affect other parts of the system\\ \hline
+	4	&10 minutes		& 0 & Sounds do not load. Does not affect other parts of the system\\ \hline
+	5	&120 minutes		& 1 & Total systems fail\\ \hline
+	6	&60 minutes		& 1 & Places do not load. This also disables all other content retrievers\\ \hline
+	7	&10 minutes		& 0 & Stories do not load. Does not affect other parts of the system\\ \hline
+	8	&60 minutes		& 1 & Instagram pictures do not load. Does not affect other parts of the system\\ \hline
+	 \hline
+	 \end{tabular}
+\end{center}
+\caption{Maturity Testing}
+\label{tab:Maturity Testing}
+\end{table}
+
+The test results clearly shows that there is a problem when the server has been inactive for more than an hour. This is because the server keeps a cache of places for an hour, before it deletes the cache. After the cache is emptied the server waits for a request before it again repopulates the cache, and when the server requests Flickr for new places it throws a time-out error. The time-out error doesn't have an effect for the user other than that the application is a bit slow if the user is the first to use the system after the cache has been emptied.
+
+\emph{Availability}\\
+Since the customer started using the new server (23rd of April) the server has been functional continuous, except from the 6th to the 7th of May. This gives that the system has had an uptime under presumably normal use of:
+
+$1-\frac{24 hrs}{23 days \times 24 hours} \times 100 = 95.652 % $
+
+\emph{Fault tolerance}\\
+The systems fail noted under the availability test was due to an global error on one of the systems external system. From this it is clear that the system depends totally on some of it's components and thereby external systems to provide the required functions. To determine how many critical components that exists in the systems, every component in the system was disabled to see the effect on the system. In addition, another part of the test considered in interupting connections to external systems. 
+
+Note that to be considered functonal the system had to show places and load stories to the end-user. 
+
+\begin{table}[!htp]
+\begin{center}
+	\begin{tabular}{ | l | l | l | r | }
+	\hline
+	\#	&Disabled Component	&Functional system	& Notes \\ \hline
+	1	&Flickr Retriever		&No			& Places do not load. This also disables all other content retrievers\\ \hline
+	2	&Story Retriever		&No			& Stories do not load. Does not affect other parts of the system\\ \hline
+	3	&Picture Retriever	&Yes			& Instagram pictures do not load. Does not affect other parts of the system\\ \hline
+	4	&Sound Retriever	&Yes			& Sounds do not load. Does not affect other parts of the system\\ \hline
+	5	&External component (Heroku)	&No			& Total systems fail\\ \hline
+	6	&External component (Flickr)	&No			& Places do not load. This also disables all other content retrievers\\ \hline
+	7	&External component (Digitalt Museum)	&No		& Stories do not load. Does not affect other parts of the system\\ \hline
+	8	&External component (Instagram)	&Yes			& Instagram pictures do not load. Does not affect other parts of the system\\ \hline
+	9	&External component (Soundcloud)	&Yes			& Sounds do not load. Does not affect other parts of the system\\ \hline
+	 \hline
+	 \end{tabular}
+\end{center}
+\caption{Fault Tolerance Testing}
+\label{tab:Fault Tolerance Testing}
+\end{table}
+
+This describes a major drawback of the reliability of the system, as of the four retrievers there are two single points of failure. In additon, the system also depends on three of five external systems to function properly. It is also important to note that if any of the external systems make radical changes so the system components becomes outdated, this will also lead to a non-functional system. Because of this the system cannot say to satisfy the requirement for fault tolerance.
+
+\emph{Recoverablity}\\
+
+Testing for recoverability was done together with the testing for fault tolerance, by taking the time on how long it took for the system to be functional after reenabling an external or internal components. Since the system isn't a critical system the timing requirement was set to five minutes, so to pass the recoverability requirment the system should functional normally within five minutes of the component reenabiling. 
+
+\begin{table}[!htp]
+\begin{center}
+	\begin{tabular}{ | l | l | l | r | }
+	\hline
+	\#	&Disabled Component	&Functional system after five minutes	& Notes \\ \hline
+	1	&Flickr Retriever		&Yes			& $<5 minutes$ \\ \hline
+	2	&Story Retriever		&Yes			& $<5 minutes$\\ \hline
+	3	&Picture Retriever	&Yes			& $<5 minutes$\\ \hline
+	4	&Sound Retriever	&Yes			& $<5 minutes$\\ \hline
+	5	&External component (Heroku)	&Yes			& $<5 minutes$\\ \hline
+	6	&External component (Flickr)	&No			& $<60 minutes$\\ \hline
+	7	&External component (Digitalt Museum)	&Yes		& $<5 minutes$\\ \hline
+	8	&External component (Instagram)	&Yes			& $<5 minutes$\\ \hline
+	9	&External component (Soundcloud)	&Yes			& $<5 minutes$\\ \hline
+	 \hline
+	 \end{tabular}
+\end{center}
+\caption{Recoverablity Testing}
+\label{tab:Recoverablity Testing}
+\end{table}
+
+Because of a cache used to store places provided by Flickr, the system uses up to 60 minutes to refresh the cache. This means that errors at Flickr so that Flickr doesn't respond to requests, leaves the system with an empty cache and thereby no places. This will again lead to a failure of the FlickrRetriver and the system itself as describes under the Fault Tolerance Test. 
 
 \paragraph{Portability}
 
