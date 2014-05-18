@@ -239,7 +239,7 @@ Average:
 \frac{133 + 10 + 104 + 135 + 107 + 132}{6} = {103.5}
 \end{equation}
 
-With all results clocking in under 150 secons, and our goal being under 300 seconds, we are very pleased with the results and can happily see our app passing this test. Considering the version of the app we recieved sometimes needed multiple days for the results to appea, it is needless to say there have been a massive improvement.
+With all results clocking in under 150 seconds, and our goal being under 300 seconds, we are very pleased with the results and can happily see our app passing this test. Considering the version of the app we recieved sometimes needed multiple days for the results to appea, it is needless to say there have been a massive improvement.
 
 
 Another important part of the performance efficiency are the application's data usage. Blowing the users' data limit and potentially taking a large part in increasing their phone-bill is something we want to avoid, and to avoid that we have implemented a data usage restraint. This restraint is set through the equation described in \todo{4.12.2}.
@@ -269,17 +269,17 @@ To simulate users we made a testing program which made a total of 500 requests o
 
 \begin{table}[!htp]
 \begin{center}
-	\begin{tabular}{ | l | l | l | r | }
+	\begin{tabular}{ | l | l | l | p{7cm} | }
 	\hline
-	\#	&Time since last test 	&Number of errors	& Notes \\ \hline
-	1	&NA				& 1 & Places do not load. This also disables all other content retrievers\\ \hline
+	\#	&Time since last test &Number of errors	& Notes \\ \hline
+	1	&NA			& 1 & Places do not load. This also disables all other content retrievers\\ \hline
 	2	&30 minutes		& 0 & Stories do not load. Does not affect other parts of the system\\ \hline
 	3	&60 minutes		& 1 & Instagram pictures do not load. Does not affect other parts of the system\\ \hline
 	4	&10 minutes		& 0 & Sounds do not load. Does not affect other parts of the system\\ \hline
-	5	&120 minutes		& 1 & Total systems fail\\ \hline
+	5	&120 minutes	& 1 & Total systems fail\\ \hline
 	6	&60 minutes		& 1 & Places do not load. This also disables all other content retrievers\\ \hline
 	7	&10 minutes		& 0 & Stories do not load. Does not affect other parts of the system\\ \hline
-	8	&60 minutes		& 1 & Instagram pictures do not load. Does not affect other parts of the system\\ \hline
+	8	&60 minutes		& 1 & Instagram pictures do not load. Does not affect other parts of the system\\
 	 \hline
 	 \end{tabular}
 \end{center}
@@ -301,7 +301,7 @@ Note that to be considered functonal the system had to show places and load stor
 
 \begin{table}[!htp]
 \begin{center}
-	\begin{tabular}{ | l | l | l | r | }
+	\begin{tabular}{ | l | p{4.2cm} | l | p{6.5cm} | }
 	\hline
 	\#	&Disabled Component	&Functional system	& Notes \\ \hline
 	1	&Flickr Retriever		&No			& Places do not load. This also disables all other content retrievers\\ \hline
@@ -312,7 +312,7 @@ Note that to be considered functonal the system had to show places and load stor
 	6	&External component (Flickr)	&No			& Places do not load. This also disables all other content retrievers\\ \hline
 	7	&External component (Digitalt Museum)	&No		& Stories do not load. Does not affect other parts of the system\\ \hline
 	8	&External component (Instagram)	&Yes			& Instagram pictures do not load. Does not affect other parts of the system\\ \hline
-	9	&External component (Soundcloud)	&Yes			& Sounds do not load. Does not affect other parts of the system\\ \hline
+	9	&External component (Soundcloud)	&Yes			& Sounds do not load. Does not affect other parts of the system\\ 
 	 \hline
 	 \end{tabular}
 \end{center}
@@ -328,9 +328,9 @@ Testing for recoverability was done together with the testing for fault toleranc
 
 \begin{table}[!htp]
 \begin{center}
-	\begin{tabular}{ | l | l | l | r | }
+	\begin{tabular}{ | l | l | p{3.7cm} | r | }
 	\hline
-	\#	&Disabled Component	&Functional system after five minutes	& Notes \\ \hline
+	\#	&Disabled Component	&Functional system  after five minutes	& Notes \\ \hline
 	1	&Flickr Retriever		&Yes			& $<5 minutes$ \\ \hline
 	2	&Story Retriever		&Yes			& $<5 minutes$\\ \hline
 	3	&Picture Retriever	&Yes			& $<5 minutes$\\ \hline
