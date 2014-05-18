@@ -80,6 +80,18 @@ Just setting up the work environment turned out to be quite difficult too. We ac
 
 It would, in our opinion, been better to work native or just use pure web-standard (HTML5, CSS3 and Javascript).
 
+	\subsection{Technical evaluation and recommendations}
+
+After reviewing the test cases the system seems to satisfy the requirements (and features) set by the customer, except for the non-functional requirement related to reliability.
+
+The failing of the reliability is caused by the server, because of the lack of storage and the servers dependency of external systems. Especially the external system used for storage of the Places (Flickr) has been a problem, this is because the external system uses a very long time to respond to our internal system's requests. This problem will also probably magnify in size as more Places are added to Flickr, which in turn will lead to an even greater delay of the response sent by the external system.
+
+To enhance the systems reliability the customer should evaluate the possibility to add a database backend. This would make it possible for the system to store it's own information so that the only dependency and single point of failure would have been the server itself. A requirement for this, is that the customer has to take editorial responsibility for the content stored on the server which the customer at the time of this project wasn't willing to do.
+
+Another recommendation for further work is that the option to remove the backend as a whole, should be considered. As of now the system roughly is a Model View Controller-application, where the smartphone application acts as the view. The computational restrictions is therefore backend, but the backend is limited to run as a cloud service with limited resources as it should be free of charges. A consequence is that it becomes natural to ask if the processing done backend, couldn't be done more efficient at the end-users smartphone. Combining the removal of a backend with local storage, would also lead to the application no longer require continuous Internet access.
+
+Both of these recommendations implicates that some parts of, or the whole system, needs to be rewritten. Careful evaluation of the options needs to be done before eventually deciding if the reliability of the system isn't good enough
+
  
 \subsection{Conclusion}
 
