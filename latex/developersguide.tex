@@ -11,15 +11,15 @@
 
 
 \section{Developers Guide}
-This introductury developers guide, aims to make a developer able to set up Stedr so that the developer gets an overview of how the system works and also how the developer can get started programming. The first part of the guide is about the backend while the second part is about the frontend. Both of the guides needs to be completed to get the example program running, and the backend part has to be completed before the frontend part. 
+This introductory developers guide, aims to make a developer able to set up Stedr so that the developer gets an overview of how the system works and also how the developer can get started programming. The first part of the guide is about the back-end while the second part is about the front-end. Both of the guides needs to be completed to get the example program running, and the back-end part has to be completed before the front-end part. 
 
 \noindent
 
 This guide is \textbf{not} meant as a tool guide, so some parts of the guide is superficial and it is left to the reader to study the tools closer.
 
-\subsection{Backend}
+\subsection{Back-end}
 
-The backend is a Java program using the Play Framework, and the backend is deployed to the Heroku, a cloud platform hosting applications as services. The source code itself maintained on a GitHub account provided by Sintef called TagCloud. Before continuing this means that a couple of prerequisites has to be fulfilled by the developer.
+The back-end is a Java program using the Play Framework, and the back-end is deployed to the Heroku, a cloud platform hosting applications as services. The source code itself maintained on a GitHub account provided by SINTEF called TagCloud. Before continuing this means that a couple of prerequisites has to be fulfilled by the developer.
 
 \paragraph{The developer should have:}
 \begin{itemize}
@@ -32,7 +32,7 @@ The backend is a Java program using the Play Framework, and the backend is deplo
 \item An \href{https://www.heroku.com/}{Heroku} account 
 \end{itemize}  
 
-On your computer, open up a terminal of your choice (cmd, bash, \dots) and navigate to the folder where you have extracted Typesafe Activator (Play Framework). Depending on your platform type the command which will executeactivator. It is possible to use Typesafe Activator with a graphical user interface by passing ui as a parameter. This will look something like:
+On your computer, open up a terminal of your choice (cmd, bash, \dots) and navigate to the folder where you have extracted Typesafe Activator (Play Framework). Depending on your platform type the command which will execute activator. It is possible to use Typesafe Activator with a graphical user interface by passing ui as a parameter. This will look something like:
 \begin{center}
 \includegraphics[scale=0.8]{guide/activator1.png} 
 \end{center}
@@ -44,13 +44,13 @@ In the right sidebar navigate to the folder where you have cloned StedR\_server 
 \includegraphics[scale=0.4]{guide/activator2.png} 
 \end{center}
 
-Notice that Typesafe Activator itself is running on port 8888. During the compiling of the system problems may occur. Often this is related to a mismatch between Typesafe and Java, for example an updated version of Java and an unupdated version of Typesafe often leads to issues. If the program is compiled succesfully, something like this should appear at localhost: 
+Notice that Typesafe Activator itself is running on port 8888. During the compiling of the system problems may occur. Often this is related to a mismatch between Typesafe and Java, for example an updated version of Java and an outdated version of Typesafe often leads to issues. If the program is compiled successfully, something like this should appear at localhost: 
 
 \begin{center}
 \includegraphics[scale=0.5]{guide/activator3.png} 
 \end{center}
 
-If you already have tried importing the folder with the source code to an editor like Eclipse, you may have noticed a lot of errors appears. To import the program and its dependencies as a project: In the left sidebar of Typesafe, click on Code, then the gear-icon. Here you can choose between Intellij and Eclipse, and Typesafe will then generate project files and guide you through how to open the program as a project. 
+If you already have tried importing the folder with the source code to an editor like Eclipse, you may have noticed a lot of errors appears. To import the program and its dependencies as a project: In the left sidebar of Typesafe, click on Code, then the gear-icon. Here you can choose between IntelliJ and Eclipse, and Typesafe will then generate project files and guide you through how to open the program as a project. 
 \begin{center}
 \includegraphics[scale=0.6]{guide/activator4.png} 
 \end{center}
@@ -107,9 +107,9 @@ If this is correct,  \href{http://127.0.0.1:9000/hello.json?name=world}{http://1
 \includegraphics[scale=0.8]{guide/completed.png} 
 \end{center}
 
-Normally you would commit this to the git-repository on GitHub, and if the new functionality is to be a part of the running server it should also be commited or deployed to Heroku. This is done by pushing the server to \texttt{git@heroku.com:stedr-beta.git}. Note that in order to push to the server directly, you will need contributor access to stedr-beta.herokuapp.com. If this isn't available or provided upon request you can create a new Heroku instance, but then the request URL destinations have to be changed in the smartphone application.
+Normally you would commit this to the git-repository on GitHub, and if the new functionality is to be a part of the running server it should also be committed or deployed to Heroku. This is done by pushing the server to \texttt{git@heroku.com:stedr-beta.git}. Note that in order to push to the server directly, you will need contributor access to stedr-beta.herokuapp.com. If this isn't available or provided upon request you can create a new Heroku instance, but then the request URL destinations have to be changed in the smartphone application.
 
-\subsection{Frontend}
+\subsection{Front-end}
 
 \dots
 
