@@ -207,6 +207,29 @@ It is important for the project that our result meets the projects main non-func
 
 \paragraph{Compability}
 
+\emph{Co-existence}
+With the result found under Reliability - maturity, it is clear that the system can handle  that multiple client share the same environment. It is worth to notice that the testing program makes use of threads to be more realistic regarding parallell requests towards the server.
+
+\emph{Interoperability}
+With the result found under Reliability - maturity, it is clear that the system can handle  that multiple client share the same environment. It is worth to notice that the testing program makes use of threads to be more realistic regarding parallell requests towards the server.
+
+\begin{table}[!htp]
+\begin{center}
+	\begin{tabular}{ | l | l | l | }
+	\hline
+	 \#	 	& Content 		& JSON 		\\ \hline
+	 1		&Places		& Yes		\\ \hline
+	 2		&Stories		& Yes		\\ \hline
+	 3		&Images		& Yes		\\ \hline
+	 4		&Collections	& Yes		\\ \hline
+	 5		&Sound		& Yes
+	 \hline
+ 	 \end{tabular}
+\end{center}
+\caption{Compability: Interoperability}
+\label{tab:Compability: Interoperabilityt}
+\end{table}
+
 \paragraph{Performance Efficiency}
 We have greatly improved the core of the system to boost the efficiency of the application, this should cause the application to use no more than 300 seconds to pull new content from the APIs. The efficiency was tested by adding new content and recording 10 times with different content posted at different times. By measuring the individual response times and calculating the average result we will get a rough estimate.\\
 
@@ -226,10 +249,10 @@ We have greatly improved the core of the system to boost the efficiency of the a
 	 9		&Story 		& 11:00			& \texttt{104 sec}\\ \hline
 	 10		&Story		& 15:48			& \texttt{135 sec}\\ \hline
 	 11		&Story		& 16:03			& \texttt{107 sec}\\ \hline
-	 12		&Story		& 19:01			& \texttt{132 sec}\\ \hline
-	 12		&SoundCloud		& 18:51			& \texttt{5 sec}\\ \hline
-	 12		&SoundCloud		& 19:15			& \texttt{7 sec}\\ \hline
-	 12		&SoundCloud		& 19:20			& \texttt{6 sec}\\  
+	 13		&Story		& 19:01			& \texttt{132 sec}\\ \hline
+	 14		&SoundCloud		& 18:51			& \texttt{5 sec}\\ \hline
+	 15		&SoundCloud		& 19:15			& \texttt{7 sec}\\ \hline
+	 16		&SoundCloud		& 19:20			& \texttt{6 sec}\\  
 	 \hline
  	 \end{tabular}
 \end{center}

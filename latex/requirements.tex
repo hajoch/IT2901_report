@@ -330,19 +330,32 @@ Dependencies & none \\ \bottomrule
 
 \subsection{Product Quality}
 
-Guided by ISO:25010, meetings with our supervisor and the feature list given to us by the customer the product qualities that are important for the project is functional suitability, portability and maintainability.
+Guided by ISO:25010, meetings with our supervisor and the feature list given to us by the customer the product qualities that are important for the project is compatibility, performance efficiency, reliability and portability.
 
 \subsubsection{Compatibility}
+There are a lot of information processing done by the backend, and the information is derived from multiple sources and in different formats. It is therefore important that the backend processes this information into a standarized format. Since there already exists code, new additions should be comatible  with the old code.
 
+\paragraph{Co-existence}
+Since the architecture behind the system relies on a clients (V) and a server (MC), it has to be possible for the clients to share the resources from the server. This means that several instances of clients should be able to be functional at the same time.
+
+The test for co-existence consists accessing the server at the same time with multiple clients. This can be done in combination with the test for maturity under Reliability.
+
+\paragraph{Interoperability}
+All information sent from the server should follow the same format (JSON) so that the front-end only will have to communicate with the back-end using the same format. This means that the back-end will have to convert XML from some of the external systems into JSON. With this approach the front-end will also remain separated from the back-end, which will make it easier to exchange parts of the GUI later on as it is
+
+For valid interoperability it is necessery that all respones from the back-end to the front-end is in the JSON-format.
 
 \subsubsection{Performance Efficiency}
-Even though the system isn't a part of a critical operation, the new and improved system will have performance efficiency as an important model of quality. The reasoning behind this is that decreased response time between components in the system is specifically asked for at multiple places in the feature list provided by the customer. 
+Even though the system isn't a part of a critical operation, the new and improved system will have performance efficiency as an important model of quality. The reasoning behind this is that the customer wanted to give users an experience of a more responsive system. In addition to this the server has to utilize minimal resources, as it is going to be ran in a resource restriced envirment. 
 
-As of now the time to load new content from the content providers to the application is slow and random. Because of this there are no exact estimation on the time used to pull content from Digitalt Fortalt and Instagram, but the application should use no more than \textit{300 seconds} to pull new content. Unrelated to the goal of performance issue; the user should be informed that the application isn't a real-time application.
+\paragraph{Time behaviour}
+As of now the time to load new content from the content providers to the application is slow and random. Because of this there are no exact estimation on the time used to pull content from Digitalt Fortalt and Instagram, but the application should use no more than \textit{300 seconds} to pull new content. This fairly high time frame is due to processing times at the external APIs. 300 seconds is therefore the time limit given to the system within it should have pulled new stories/pictures from Digitalt Fortalt/Instagram. The time limitations set for the back-end to respond to requests is set to \textit{120 seconds} for places (with an empty cache) and \textit{15 seconds} for places (with a full cache), stories, images and sounds. Unrelated to the goal of performance issue; the user should be informed when the application is processing information.
 
-Requirements related to resources utilized by the application when performing it's tasks, are already met by the prototype. The new version of the application are bound also bound by these goals. Specifically the back-end is bound by the resources provided by the 1x Heroku Cloud Platform. Because of the utilization of the Google Maps API, the resources front-end is limited to the bound given to the application from Google Maps. 
+\paragraph{Resource utilization}
+Requirements related to resources utilized by the application when performing it's tasks, are already met by the prototype. The new version of the application are bound also bound by these goals, which means that new functions must maintain minimal and  Specifically the back-end is bound by the resources provided by the free service of the Heroku Cloud Platform. One of the implications of this is that the cache cannot be written to disk as the filesystem on the disk is read-only. Without writing capabilities or database access, the back-end will have problems improving the time behaviour for place-loading when the cache is empty.
 
-Regarding capacity used by the the application, there should be an improvement. Because the application is to be used on the go where there may not be any WiFi-hotspots, the application should restrain itself to download content that is unrelated to where the user is. Because of the varied content types, it is hard to set a defined limit in how much contents (in terms of megabytes) the application should download. The limitations given to the application will therefore be set by the equation: \\ 
+\paragraph{Capacity}
+Regarding capacity used by the the application, there should be an improvement. Because the application is to be used on the go where there may not be any WiFi-hotspots, the application should restrain itself to download content that is unrelated to where the user is. Because of the varied content types, it is hard to set a defined limit in how much content (in terms of megabytes) the application should download. The limitations given to the application will therefore be set by the equation: \\ 
 \begin{center} 
 $\textrm{Bound}=\textrm{Content from Digitalt Fortalt}+5\times\textrm{Content from Twitter}+10\times\textrm{Picture from Flickr}+5\times\textrm{Picture from Instagram}$
 \end{center}
@@ -350,19 +363,39 @@ $\textrm{Bound}=\textrm{Content from Digitalt Fortalt}+5\times\textrm{Content fr
 \subsubsection{Reliability}
 Since the application is going to be online without a team responsible for the technical maintenance, the server should be operative as long as the external content providers are feeding it with content. 
 
+\paragraph{Maturity}
 Because of the early versioning of the application, the aspect of maturity is not important for this application. Users of the application are few, and they know what the capabilities of the application is. This means that a user follows a rigid pattern and within that pattern, the probability to execute faults is almost non-existing. Functionality outside that pattern is not supported and thereby it's impossible to execute mistakes.
 
-An important characteristic of the application is that it has to be available just as often as a professional service. This means that under normal circumstances, the uptime of the back-end and front should be 99 \%
+Testing of this should be done by simulating a high number of calls towards the server. The simulations should be done as threads as this will better simulate a real-life situation these are not done sequentially.
 
+\paragraph{Availability}
+An important characteristic of the application is that it has to be available just as often as a professional service. This means that under normal circumstances, the uptime of the back-end and front should be 90 \% or above.
+
+Testing of this is done over at least a week while monitoring the uptime of the server. $1-\frac{Downtime in hrs}{Days running \times 24 hours} \times 100 = uptime \% $
+
+\paragraph{Fault tolerance}
 Whenever faults are occurring, it is crucial that the back-end has implemented services so that it can recover without the need of a maintainer. Because of the relative simplicity of the back-end, the server should restart itself within \textit{180 seconds}
 
+Testing for this should be done by deactivating components and then monitor if a system is to be considered functional. A functional system is a system which serves places and stories on a map.
+
+\paragraph{Recoverability}
+Since most of the system will be ran without a maintainer, the system shoud recover quickly on faults by its own.
+
+Recoverability-testing is done together with testing the fault tolerance, by monitoring the time the system uses to become operational after critical components are disabled and reactivated. Beacuse of the existing architecture it is already known that the system will fail when certain components are deactivated so a fail-proof system is not theoretically possible.
+
 \subsubsection{Portability}
+One of the main reasons for using the Titanium-framework is that it is possible to code once, and compile it down to native applications for a number of smartphone environments. Beacuse of iOS developer requirements, the former application has unfortunately never been tested on iOS, which is a goal set by the customer.
 
-It is important to the customer that the application is made available on multiple platform as this is a demand by Tag Cloud. The minimal number of platforms which the product should run on is iOS and Android. 
+\paragraph{Adaptability}
+One main constraint for obtaining a high grade of adaptability is to not use platform specific GUI elements front-end. This should lead to an identical codebase front-end, which can compile down to all the Titanium-supported platforms. With this method it is also possible to ensure some degree of compatibility against new platform versions, since the mobile platforms usually have support for older platforms. Of course this is not satisfied by the system, but by the developers of a given mobile platform. Therefore this support is not guaranteed.  
 
-Following this, the front-end of the application should be written once and compiled down to both the iOS and Android platform. The back-end should provide agnostic responses, so that the responses can be handled the same by on Android and iOS devices. 
+\paragraph{Installability}
+Since the system is supposed to be a native application, it should be possible to install the application from platform-specific repositories (i.e: Play and iOS-store). Since the program is still under development this won't be accomplished though, and the requirment is to deliver a file which can be installed on phones meant for development (debugging enabled).
 
-Because of the early development phase of the application, there is not a requirement to install the application from the normal application providers Google Play and Apple Store. It is enough that it is possible to install the applications on development devices. This also leads to that the application doesn't need to consider replaceability at this point.  
+\paragraph{Replaceability}
+A above, the system should update through a platform specific service. Since the system isn't a part the official repositories yet, replacement of the application should also be through debugging enabled devices. 
+
+Note: Since the program builds down to native applications under 15MB, it should be a fairly small job to make the program available on the different platform-specific repositories.  
 
 
 
