@@ -71,7 +71,7 @@ It would now have been possible to create a \texttt{retriever} directly, but we 
 \includegraphics[scale=0.7]{guide/eclipse4.png} 
 \end{center}
 
-Now we're ready to implement the \texttt{HelloRetriever}
+Now we're ready to implement the \texttt{HelloRetriever.java}
 
 \begin{center}
 \includegraphics[scale=0.7]{guide/eclipse5.png} 
@@ -95,9 +95,11 @@ If this is correct,  \href{http://127.0.0.1:9000/hello.json?name=world}{http://1
 \includegraphics[scale=0.8]{guide/completed.png} 
 \end{center}
 
-Normally you would commit this to the git-repository on GitHub, and if the new functionality is to be a part of the running server it should also be committed or deployed to Heroku. This is done by pushing the server to \texttt{git@heroku.com:stedr-beta.git}. Note that in order to push to the server directly, you will need contributor access to stedr-beta.herokuapp.com. If this isn't available or provided upon request you can create a new Heroku instance, but then the request URL destinations have to be changed in the smartphone application.
+Normally you would commit this to the git-repository on GitHub, and if the new functionality is to be a part of the running server it should also be commited or deployed to Heroku. This is done by pushing the server commit to \texttt{git@heroku.com:stedr-beta.git}. Note that in order to push to the server directly, you will need contributor access to stedr-beta.herokuapp.com. If this isn't available or provided upon request you can create a new Heroku instance, but then the request URL destinations have to be changed in the smartphone application.
 
-\textbf{Remember to add the API-keys to the \texttt{StedrConstants.java}. These must ONLY be added to private repositories!!! Also, since almost all of them are owned by members of former dev-teams they may become invalid without notice}:
+Note that the first server commit to a new Heroku instance is so slow that you can get an error message regarding time-out when compiling. At the time of writing we are not sure if this error is ours or Herokus, because it may seem like the error is related to Herokus slug compiler. Heroku needs to install OpenJDK on their instance the first time the server is pushed to Heroku, OpenJDK is fairly large so this would also explain that the server's slug is fairly large. The error was fixed by adding a \texttt{system.properties}-file under app in the project folder, with the value \texttt{java.runtime.version=1.7}. This file should now be pulled from GitHub when cloning the project.
+
+\textbf{Remember to add the API-keys to the \texttt{StedrConstants.java}. These must ONLY be added to private repositories, and should really only be added to a deployment branch of the project. Also, since almost all of them are owned by members of former dev-teams they may become invalid without notice}:
 
 
 \texttt{// this apikey belongs to: chrisfro@stud.ntnu.no} \\
