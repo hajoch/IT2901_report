@@ -1,12 +1,11 @@
 
 \section{Testing}
 \thispagestyle{plain}
-System testing or software testing, falls into something that is called “Black-box testing”. This is a method of software testing, that investigates the functionality of the application. Eg. what it does, it is simply described as this:
-It will not require to know how to code, or need any sufficient level of skill to programming when an system test is about to go down. It will neither interfere with it is internal structure or workings. 
+System testing or software testing, falls into something that is called “Black-box testing”. This is a method of software testing, that investigates the functionality of the application, eg. what it does. It will not interfere with it's internal structure or workings. 
 
 \subsection{Testing Procedure}
 
-When you are about to conduct a test, you find a test-person. Then you tell them what the software is supposed to do. And give them the Test cases[7.2], and explain to them it is very important to think loud so we get the most out of the testing. 
+When you are about to conduct a test, you find a test-person. Then you tell them what the software is supposed to do and further give them the Test cases[7.2]. It is very important for the test subjects to think loud so we can get maximum feedback from the testing. 
 
 \subsection{Test Cases}
 
@@ -62,7 +61,7 @@ Feature& All the views are accessible \\ \hline
 Preconditions& \begin{enumerate} \item[ ]1,2,3,4 \item[T-F1] Get places \end{enumerate} \\ \hline
 Test Description& \begin{enumerate} \item Click on a pinpoint \item Click on the small window that appears \item Click on one of the buttons \textit{Images, Sound, Story} \item Dependent on the previous step, click on the buttons not yet pushed \item Click the menu button \item Click home \end{enumerate} \\ \hline
 Expected result & Which view that is selected is shown to the user by being in a different colour than the two other buttons. If the button for the selected view is touched, nothing should happen. \newline
- For every button representing a non-selected view, the user should be taken to the view as indicated by the button text. \\ \hline
+For every button representing a non-selected view, the user should be taken to the view as indicated by the button text. \\ \hline
 Pass/Fail criteria &The test is passed if the button: \newline[5pt]
 Image - Takes you to the image view\newline
 Story - Takes you to the story view\newline
@@ -86,7 +85,7 @@ Requirements & SF-7 \\ \hline
 Feature& Content is loaded for the places \\ \hline
 Preconditions& \begin{enumerate} \item[T-F3] Views \end{enumerate} \\ \hline
 Test Description& \begin{enumerate} \item Click on a pinpoint(not Camera Obscura) \item Click on the description \item Go through the views as in T-F3 \item[3a] Click on all of the titles on the story \item[3b] Click on two random images \item[3c] Click on a sound \end{enumerate} \\ \hline
-Expected result &The places should be loaded with relevant and accessible content from all of the content providers.. \newline
+Expected result & The places should be loaded with relevant and accessible content from all of the content providers.. \newline
 If some content-types are not provided for the specific place, the content type should be loaded but indicate that it is empty. \\ \hline
 Pass/Fail criteria &The test is considered a pass if the expected result happens. \newline
 If there are any inconsistencies with the expected result, the test should be considered a fail. \\ \hline
@@ -183,13 +182,13 @@ Severity & Medium\\ \bottomrule
 \label{sec:TestExecution}
 \subsubsection{Acceptance Testing}
 
-Acceptance testing is one of the last levels of the software testing process. The purpose of such testing is to evaluate the system's compliance with the given requirements to check whether is is acceptable for delivery. Hence the name acceptance testing.
+Acceptance testing is one of the last levels of the software testing process. The purpose of such testing is to evaluate the system's compliance with the given requirements to check whether it is acceptable for delivery. Hence the name acceptance testing.
 
-On May 14. during one of our last meetings we sat down with Jaqueline Floch for the final acceptance test of our system. Since the project has been based on further developing features and improving the graphical user interface to increasing usability, both these has to be included in the acceptance test.
+On May 14. during one of our last meetings we sat down with Jaqueline Floch for the final acceptance test of our system. This acceptance test included further developed features and improvements of the graphical user interface.
 
-For the main test we had a feature based acceptance test where we went through the requirement list. Not to say that usability is not as important, but our customer had received the latest build almost every week in the later stages of the project. Through this, the customer have conducted something similar to a usability based acceptance test regularly throughout the project, to which we received feedback. Because of this we did not have the same need for a usability based user acceptance test, which we know is the way many of the other groups have chosen to handle the test, but Jaqueline Floch had the app tested by four of her colleagues, which all gave positive feedback. If there had been any crucial shortcomings it probably would have been pointed out.
+For the main test we had a feature based acceptance test where we went through the requirement list. Not to say that usability is not as important, but our customer had received the latest build almost every week in the later stages of the project. With this, the customer have conducted usability acceptance testing regularly throughout the project, giving us feedback. Because of this we did not have the same need for a usability based user acceptance test, which we know is the norm, but Jaqueline Floch had the app tested by four of her colleagues, which all gave positive feedback. If there had been any crucial shortcomings it probably would have been pointed out.
 
-The test was conducted by going through the requirement list sorted by priority and individually receiving a verdict on acceptance. The individual requirement either reviewed \texttt{Pass, fail, outdated} or \texttt{cancel} if the requirement was pulled. The latter was the case on a lot of the requirements with lower priority since we had little time and the customer wanted us to focus on the more important tasks.
+The test was conducted by going through the requirement list sorted by priority and individually receiving a verdict on acceptance. The individual requirement either reviewed \texttt{Pass, fail, outdated} or \texttt{cancel} if the requirement was withdrawn. The latter was the case on a lot of the requirements with lower priority since we had little time and the customer wanted us to focus on the more important tasks.
 
 The result of the acceptance test are listed below:\\
 
@@ -207,10 +206,10 @@ It is important for the project that our result meets the projects main non-func
 \paragraph{Compability}
 
 \emph{Co-existence}
-With the result found under Reliability - maturity, it is clear that the system can handle  that multiple client share the same environment. It is worth to notice that the testing program makes use of threads to be more realistic regarding parallel requests towards the server.
+With the result found under Reliability - maturity, it is clear that the system can handle that multiple client share the same environment. It is worth to notice that the testing program makes use of threads to be more realistic regarding parallel requests to the server.
 
 \emph{Interoperability}
-Since the requirement for interoperability was said to be fulfilled as long as the system followed a standardized method of communication over a known and widely used protocol, the testing consisted of looking at the objects sent from the server and acknowledge that they were valid JSON-objects.
+With the result found under Reliability - maturity, it is clear that the system can handle that multiple client share the same environment. It is worth to notice that the testing program makes use of threads to be more realistic regarding parallel requests to the server.
 
 \begin{table}[!htp]
 \begin{center}
@@ -230,7 +229,7 @@ Since the requirement for interoperability was said to be fulfilled as long as t
 \end{table}
 
 \paragraph{Performance Efficiency}
-We have greatly improved the core of the system to boost the efficiency of the application, this should cause the application to use no more than 300 seconds to pull new content from the APIs. The efficiency was tested by adding new content and recording 10 times with different content posted at different times. By measuring the individual response times and calculating the average result we will get a rough estimate.\\
+We have greatly improved the core of the system to boost the efficiency of the application. This should cause the application to use no more than 300 seconds to pull new content from the APIs. The efficiency was tested by adding new content and recording 10 times with different content posted at different times. By measuring the individual response times and calculating the average result we will get a rough estimate.\\
 
 \begin{table}[!htp]
 \begin{center}
@@ -259,7 +258,7 @@ We have greatly improved the core of the system to boost the efficiency of the a
 \label{tab:Performance Efficiency: Publishing New Content}
 \end{table}
 
-Since much of the test content had relatively consistent results we did not think more tests was needed. The Instagram images appeared almost instantly ( 1 second) consistently, since we completed the tests manually, we could not measure finer times, something we thought was not needed due to the nature of the tests. The twitter content were a little slower as expected, but did also appear consistently at a reasonable time averaging in just under 20 seconds. The SoundCloud publishing also happened pretty quick averaging \texttt{6 seconds} As for the stories we published through Digitalt Fortalt, the times were very inconsistent. In three of the tests (\# 7, \#10 and \#12), which was the longest ones, the content had to be uploaded to DF as well as being published, this probably added to the time. All the other tests were performed with the content already uploaded, just to be published, but we still recorded a massive swing in results ranging from \texttt{10 seconds} (\#8) to \texttt{105 seconds} (\#9).
+Since much of the test content had relatively consistent results we did not think more testing was needed. The Instagram images appeared almost instantly ( 1 second) consistently, since we completed the tests manually, we could not measure finer times. The twitter content were a little slower as expected, but did also appear consistently at a reasonable time averaging in just under 20 seconds. The SoundCloud publishing also happened pretty quick averaging \texttt{6 seconds} As for the stories we published through Digitalt Fortalt, the times were very inconsistent. In three of the tests (\# 7, \#10 and \#12), which was the longest ones, the content had to be uploaded to DF as well as being published. This probably added to the time. All the other tests were performed with the content already uploaded, but we still recorded a massive variation in results ranging from \texttt{10 seconds} (\#8) to \texttt{105 seconds} (\#9).
 
 
 Average: 
@@ -267,10 +266,10 @@ Average:
 \frac{133 + 10 + 104 + 135 + 107 + 132}{6} = {103.5}
 \end{equation}
 
-With all results clocking in under 150 seconds, and our goal being under 300 seconds, we are very pleased with the results and can happily see our app passing this test. Considering the version of the app we received sometimes needed multiple days for the results to appear, it is needless to say there have been a massive improvement.
+With all results clocking in under 150 seconds, and our goal being under 300 seconds, we are very pleased with the results and can happily see our app passing this test. Considering that the original app needed multiple days for the results to appear, it is needless to say that there have been a massive improvement.
 
 
-Another important part of the performance efficiency are the application's data usage. Blowing the users' data limit and potentially taking a large part in increasing their phone-bill is something we want to avoid, and to avoid that we have implemented a data usage restraint. This restraint is set through equation (\ref{eq:DownloadLimit}) in section \ref{sec:ProductQuality}.
+Another important part of the performance efficiency is the application's data usage. Blowing the users' data limit and potentially taking a large part in increasing their phone-bill is something we want to avoid. To avoid this we have implemented a data usage restraint. This restraint is set through equation (\ref{eq:DownloadLimit}) in section \ref{sec:ProductQuality}.
 
 We tested the data usage to make sure our application met our standard. We measured this roaming unconnected to any WiFi-hotspots while running the app.\\
 
@@ -282,18 +281,18 @@ Entering place with only one story: \texttt{+ 6.07 kB}
 Browsing map over Trondheim: \texttt{1.64 MB}\\
 Entering place with 6 stories and 2 Instagram pictures: \texttt{+ 0.02 MB}
 
-We found these results to be pretty reasonable. The app does not download more content than necessary, and the results seems really consistent compared to the experiences we have had using the application.
+We found these results to be pretty reasonable. The app does not download more content than necessary, and the results seems really consistent compared to the experiences we have had using the previous application.
 
 \paragraph{Reliability}
 
-Testing of components was done by feeding test cases to the components, and when accepted these new components was added to a running server instance that acted as a beta. The beta server was deployed at the 9th of April and has since been monitored to record uptime and errors. Shortly after Easter the old server was exchanged with the new one so that the customer could use new features, but also so that it was possible to monitor how the server performed under the expected normal use.
+Testing of components was done by feeding test cases to the components. When accepted, these new components was added to a running server instance that acted as a beta. The beta server was deployed at the 9th of April and has since been monitored to record uptime and errors. Shortly after easter the old server was changed with the new one so that the customer could use new features, but also so that it was possible to monitor how the server performed under normal usage.
 
 A shortcoming to the test-data below is that each time new features was deployed to the server, the server was restarted. Because of this, the longest interval the server has been running uninterrupted is approximately one week. 
 
 \emph{Maturity}\\
-The testing of maturity was done by analysing the data recorded in comparison to the feedback we got from the customer. Also, there was done an additional  test where specific task were completed. Since maturity considers the system under normal use the additional test was not a stress test in terms of using the system until it broke, but using the system at a relatively high frequency and noting the number of incidents.
+The testing of maturity was done by analysing the data recorded in comparison to the feedback we got from the customer. Also, there was done an additional test where specific task were completed. Since maturity considers the system under normal use, the additional test was not a stress test in terms of using the system until it broke. Rather it was using the system at a relatively high frequency and noting the number of incidents.
 
-To simulate users we made a testing program which made a total of 500 requests over a short period of time ($<5 minutes$). This test was done eight times over a single day, but with random rest periods for the server.  If the server returned an error this was noted. 
+To simulate users we made a testing program which made a total of 500 requests over a short period of time ($<5 minutes$). This test was done eight times over a single day, but with random rest periods for the server. If the server returned an error this was noted. 
 
 \begin{table}[!htp]
 \begin{center}
@@ -315,7 +314,7 @@ To simulate users we made a testing program which made a total of 500 requests o
 \label{tab:Maturity Testing}
 \end{table}
 
-The test results clearly shows that there is a problem when the server has been inactive for more than an hour. This is because the server keeps a cache of places for an hour, before it deletes the cache. After the cache is emptied the server waits for a request before it again repopulates the cache, and when the server requests Flickr for new places it throws a time-out error. The time-out error doesn't have an effect for the user other than that the application is a bit slow if the user is the first to use the system after the cache has been emptied.
+The test results clearly shows that there is a problem when the server has been inactive for more than an hour. This is because the server keeps a cache of places for an hour, before it deletes the cache. After the cache is emptied the server waits for a request before it again repopulates the cache. Also, when the server requests Flickr for new places it throws a time-out error. The time-out error doesn't have an effect for the user other than that the application is a bit slow if the user is the first to use the system after the cache has been emptied.
 
 \emph{Availability}\\
 Since the customer started using the new server (23rd of April) the server has been functional continuous, except from the 6th to the 7th of May. This gives that the system has had an uptime under presumably normal use of:
@@ -323,9 +322,9 @@ Since the customer started using the new server (23rd of April) the server has b
 $1-\frac{24 hrs}{23 days \times 24 hours} \times 100 = 95.652 \% $
 
 \emph{Fault tolerance}\\
-The systems fail noted under the availability test was due to an global error on one of the systems external system. From this it is clear that the system depends totally on some of it's components and thereby external systems to provide the required functions. To determine how many critical components that exists in the systems, every component in the system was disabled to see the effect on the system. In addition, another part of the test considered in interrupting connections to external systems. 
+The systems fail noted under the availability test was due to an global error on one of the systems external system. From this it is clear that the system depends totally on some of it's components and thereby external systems to provide the required functions. To determine how many critical components that exists in the systems, every component in the system was disabled to see the effect on the system. In addition, another part of the test considered interrupting connections to external systems. 
 
-Note that to be considered functional the system had to show places and load stories to the end-user. 
+Note that to be considered functional, the system had to show places and load stories to the end-user. 
 
 \begin{table}[!htp]
 \begin{center}
@@ -348,11 +347,11 @@ Note that to be considered functional the system had to show places and load sto
 \label{tab:Fault Tolerance Testing}
 \end{table}
 
-This describes a major drawback of the reliability of the system, as of the four retrievers there are two single points of failure. In addition, the system also depends on three of five external systems to function properly. It is also important to note that if any of the external systems make radical changes so the system components becomes outdated, this will also lead to a non-functional system. Because of this the system cannot say to satisfy the requirement for fault tolerance.
+This describes a major drawback of the reliability of the system, out of the four retrievers there are two single points of failure. In addition, the system also depends on three of five external systems to function properly. It is also important to note that if any of the external systems make radical changes so the system components becomes outdated, this will also lead to a non-functional system. Because of this the system cannot say to satisfy the requirement for fault tolerance.
 
 \emph{Recoverability}\\
 
-Testing for recoverability was done together with the testing for fault tolerance, by taking the time on how long it took for the system to be functional after re-enabling an external or internal components. Since the system isn't a critical system the timing requirement was set to five minutes, so to pass the recoverability requirement the system should functional normally within five minutes of the component re-enabling. 
+Testing for recoverability was done together with the testing for fault tolerance, by taking the time on how long it took for the system to be functional after re-enabling an external or internal components. Since the system isn't a critical system, the timing requirement was set to five minutes, so to pass the recoverability requirement the system should function normally within five minutes of the component re-enabling. 
 
 \begin{table}[!htp]
 \begin{center}
@@ -375,11 +374,11 @@ Testing for recoverability was done together with the testing for fault toleranc
 \label{tab:Recoverability Testing}
 \end{table}
 
-Because of a cache used to store places provided by Flickr, the system uses up to 60 minutes to refresh the cache. This means that errors at Flickr so that Flickr doesn't respond to requests, leaves the system with an empty cache and thereby no places. This will again lead to a failure of the FlickrRetriver and the system itself as describes under the Fault Tolerance Test. 
+Because of a cache used to store places provided by Flickr, the system uses up to 60 minutes to refresh the cache. This means that errors so that Flickr doesn't respond to requests, leaves the system with an empty cache and thereby no places. This will again lead to a failure of the FlickrRetriver and the system itself as describes under the Fault Tolerance Test. 
 
 \paragraph{Portability}
 
-The multiplatform aspect of the project has played a major part in the development and have played a large part in our choice of environment and frameworks. What we want to achieve is a reasonable consistency through different platforms and versions. We have throughout the development process tested it with many different virtual devices on different settings, but the most valuable ones are the ones performed on the physical devices at our disposal.\\
+The multiplatform aspect of the project has played a major part in the development and have a large part in our choice of environment and frameworks. What we want to achieve is a reasonable consistency through different platforms and versions. We have throughout the development process tested it with many different virtual devices on different settings, but the most valuable ones are the ones performed on the physical devices at our disposal.\\
 
 \begin{table}[!htp]
 \begin{center}
