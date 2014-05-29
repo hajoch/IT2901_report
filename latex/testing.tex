@@ -194,16 +194,13 @@ The result of the acceptance test are listed below:\\
 \includepdf[%
  	pages={-},
 	offset=0in 0in,%
-	addtolist={%
-		\thepage, table, {Acceptance Testing}, tab:AcceptanceTest
-	},
 	]{res/AcceptanceTesting_Requirements.pdf}
 
-As you can see, one requirement are missing a verdict. This is is because this was not testable since we waited for a response from SoundCloud at the time. This was later tested by the customer where \todo{TODO}.
+As you can see, one requirement are missing a verdict. This is is because this was not testable since we waited for a response from SoundCloud at the time. This was later implemented and are now working as it should.
 
 
 \subsubsection{NFR testing}
-It is important for the project that our result meets the projects main non-functional requirements, described in the ``Product quality'' section of the SRS chapter \todo{chapter 4.12}, for it to be considered a success. 
+It is important for the project that our result meets the projects main non-functional requirements, described in the ``Product quality'' section of the SRS chapter (\ref{sec:ProductQuality}), for it to be considered a success. 
 
 \paragraph{Compability}
 
@@ -271,7 +268,7 @@ Average:
 With all results clocking in under 150 seconds, and our goal being under 300 seconds, we are very pleased with the results and can happily see our app passing this test. Considering the version of the app we received sometimes needed multiple days for the results to appear, it is needless to say there have been a massive improvement.
 
 
-Another important part of the performance efficiency are the application's data usage. Blowing the users' data limit and potentially taking a large part in increasing their phone-bill is something we want to avoid, and to avoid that we have implemented a data usage restraint. This restraint is set through the equation described in \todo{4.12.2}.
+Another important part of the performance efficiency are the application's data usage. Blowing the users' data limit and potentially taking a large part in increasing their phone-bill is something we want to avoid, and to avoid that we have implemented a data usage restraint. This restraint is set through the equation \ref{eq:DownloadLimit} in \ref{sec:ProductQuality}.
 
 We tested the data usage to make sure our application met our standard. We measured this roaming unconnected to any WiFi-hotspots while running the app.\\
 

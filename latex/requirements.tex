@@ -329,6 +329,7 @@ Dependencies & none \\ \bottomrule
 \clearpage
 
 \subsection{Product Quality}
+\label{sec:ProductQuality}
 
 Guided by ISO:25010, meetings with our supervisor and the feature list given to us by the customer the product qualities that are important for the project is compatibility, performance efficiency, reliability and portability.
 
@@ -355,9 +356,13 @@ As of now the time to load new content from the content providers to the applica
 Requirements related to resources utilized by the application when performing it's tasks, are already met by the prototype. The new version of the application are bound also bound by these goals, which means that new functions must maintain minimal and  Specifically the back-end is bound by the resources provided by the free service of the Heroku Cloud Platform. One of the implications of this is that the cache cannot be written to disk as the filesystem on the disk is read-only. Without writing capabilities or database access, the back-end will have problems improving the time behaviour for place-loading when the cache is empty.
 
 \paragraph{Capacity}
+
 Regarding capacity used by the the application, there should be an improvement. Because the application is to be used on the go where there may not be any WiFi-hotspots, the application should restrain itself to download content that is unrelated to where the user is. Because of the varied content types, it is hard to set a defined limit in how much content (in terms of megabytes) the application should download. The limitations given to the application will therefore be set by the equation: \\ 
 \begin{center} 
 $\textrm{Bound}=\textrm{Content from Digitalt Fortalt}+5\times\textrm{Content from Twitter}+10\times\textrm{Picture from Flickr}+5\times\textrm{Picture from Instagram}$
+\begin{equation}
+\label{eq:DownloadLimit}
+\end{equation}
 \end{center}
 
 \subsubsection{Reliability}
