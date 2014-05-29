@@ -3,17 +3,17 @@
 \thispagestyle{plain}
 
 \subsection{Purpose}
-This is the software requirement specification for the new version of Stedr, both the back-end system that provides content and also the front-end that shows the content and the context of the content to the user. Here the traditional architectural terms back-end - and front-end are used, but there are some subtleties to this term, as the front-end itself is managing a content service of its own. 
+This is the software requirement specification for the new version of Stedr. This concerns both the back-end system and also the front-end that shows the content to the user. Here the traditional architectural terms back-end - and front-end are used, but there are some subtleties to this term, as the front-end itself is managing a content service of its own. 
 
 \subsection{Intended audience and reading suggestions}
-Intended readers for this document are current and future developers, and the customer. The reader should also be noted that the SRS both can be read as a stand-alone document to get an overview of the rationalization behind the development process, but that it also is a part of the project report as a whole
+Intended readers for this document are current and future developers, and the customer. The reader should also be noted that the SRS both can be read as a stand-alone document to get an overview of the rationalization behind the development process, but that it also is a part of the project report as a whole.
 
 
 \subsection{References}
 The software requirements are based on the standard as provided by ISO/IEC:25010 \cite[10]{25010}, and also the models that can be found in this report's section for architecture and modelling. References to the ISO-standard and other literature are found at the end of the project report under references.
 
 \subsection{Product perspective}
-Originally Stedr is a product developed by students at NTNU as a part of the subject TDT4290, and this application will form a basis for out continued development. The state of the existing application is considered to be a working prototype, and to some degrees it is an application that is built up with a traditional server-client architecture. A simple technical overview of the system is provided below. 
+Originally Stedr is a product developed by students at NTNU as a part of the subject TDT4290, and this application will form a basis for our continued development. The state of the existing application is considered to be a working prototype, and to some degree it is an application that is built up with a traditional server-client architecture. A simple technical overview of the system is provided below. 
 
 \begin{figure}[h!]
 \begin{center}
@@ -23,7 +23,7 @@ Originally Stedr is a product developed by students at NTNU as a part of the sub
 \end{figure}
 
 \subsection{User classes and characteristics}
-The users of the program mainly divide into two categories. One of those groups is the primary user group which are interacting with the smartphone application, front-end, to see content. A typical primary user is an high school student which is introduced to the program in the context of cultural heritage awareness. As mentioned earlier, the broad goal of the application is to make people aware about cultural heritage. If that goal is fulfilled, some primary users of the application will hopefully transit over to become a content provider. 
+The users of the program is mainly divide into two categories. One of these groups is the primary user group which are interacting with the smartphone application, front-end and to-see-content. A typical primary user is an high school student which is introduced to the program in the context of cultural heritage awareness. As mentioned earlier, the broad goal of the application is to make people aware about cultural heritage. If that goal is fulfilled, some primary users of the application will hopefully transit over to become a content provider. 
 
 \noindent
 
@@ -31,13 +31,13 @@ A content provider has the possibility to interact with the system directly, but
 
 \noindent
 
-Another secondary user is the maintainer-administrator. The maintainer-administrator will use a special set of tools to approve creation of the systems places, but these tools are provided by the external system Flickr. Our internal system is communicating with that external system so that applications relevant information is sent from the external to the internal system, but in the end the external system is stand-alone and can not be controlled directly from the internal system. 
+Another secondary user is the maintainer-administrator. The maintainer-administrator will use a special set of tools to approve creation of the systems places, but these tools are provided by the external system Flickr. Our internal system is communicating with the external system so that applications relevant with information is sent from the external to the internal system. In the end the external system is stand-alone and can not be controlled directly from the internal system. 
 
 \noindent
 
 \subsection{Product functions}
 
-The main features of the program for different user categories are presented as a bullet list below. All of the provided functions by the system are available to every user without the need of registration or approval by the systems maintainer-administrator with one exception relating to adding new places. In addition the user may need to register on external systems to make use of those features.
+The main features of the program for different user categories are presented as a bullet list below. All of the provided functions by the system are available to every user without the need of registration or approval by the systems maintainer-administrator. The only exception is related to adding new places. In addition the user may need to register on external systems to make use of those features.
 
 \noindent
 
@@ -72,7 +72,7 @@ The main features of the program for different user categories are presented as 
 \end{itemize}
 
 \subsection{Operating environment}
-The front-end application of the system is a smartphone application which aims to run on the two major smartphone platforms Android (2.2 and above) and iOS. Because of difficulties with developing towards the iOS platform without equipment from Apple, the goal is to get the application to run on a unspecific versions of iOS to see that a full implementation of the application on iOS is feasible. The back-end of the system, or server, should run as a cloud-based platform provided by Heroku, as the case was for the existing version of the server. Since that service now is unavailable the new version of the back-end will run as a new service instead of replacing the former one. 
+The front-end application of the system is a smartphone application which aims to run on the two major smartphone platforms Android (2.2 and above) and iOS. Because of difficulties with developing towards the iOS platform without equipment from Apple, the goal is to get the application to run on a unspecific versions of iOS. This is to make sure that the full implementation of the application will also run on iOS. The back-end of the system, or server, should run as a cloud-based platform provided by Heroku, as the case was for the existing version of the server. Since that service now is unavailable the new version of the back-end will run as a new service and thus replacing the former one. 
 
 \subsection{Design and Implementation Constraints}
 Because of the nature of the project as a part of a course, there will be few constraints regarding the development of the system. Because there already exists functionality it's natural to constraint the system to make use of the existing code and technologies. Reimplementing them with new code or technologies are allowed, but since time is a limited resource (approximately 20 hours per member per week) it is important to be time effective. That time effectivity and available workload is also to be seen as a design and implementation constraint. Apart from a private GitHub account, the project is to be done without funding so for the deploying a free service has to be chosen.
@@ -83,7 +83,7 @@ Since the customer is a professional organisation, it is also important that the
 
 \subsection{User Documentation}
 
-Documentation to system users will be provided in the application itself, this documentation has to easily be editable by the maintainer-administrator which will. In addition to the user documentation there will be provided documentation for developers as an appendix in this report, and code documentation in the code itself and in the GitHub-repository. 
+Documentation to system users will be provided in the application itself. This documentation has to easily be editable by the maintainer-administrator. In addition to the user documentation there will be provided documentation for developers as an appendix in this report, and code documentation in the code itself and in the GitHub-repository. 
 
 \subsection{Assumptions and Dependencies}
 
@@ -91,7 +91,7 @@ An important assumption in the development of the system is that the former syst
 
 \noindent
 
-Another important assumption, is that the external systems that were implemented in the earlier systems still is functional. This is also a dependency, because changes in those external systems will make internal system malfunctioned. This can be seen as a large drawback in the system, but as the back-end is to be kept to a minimal external sources have to be used for content storage and content providing.
+Another important assumption, is that the external systems that were implemented in the earlier systems still is functional. This is also a dependency, because changes in those external systems will make internal system malfunctioned. This can be seen as a large drawback in the system, but as the back-end is to be kept to a minimal, external sources have to be used for content storage and content providing.
 
 \subsection{System Features}
 
@@ -340,7 +340,7 @@ There are a lot of information processing done by the back-end, and the informat
 \paragraph{Co-existence}
 Since the architecture behind the system relies on a clients (V) and a server (MC), it has to be possible for the clients to share the resources from the server. This means that several instances of clients should be able to be functional at the same time.
 
-The test for co-existence consists accessing the server at the same time with multiple clients. This can be done in combination with the test for maturity under Reliability.
+The test for co-existence will be accessing the server at the same time with multiple clients. This can be done in combination with the test for maturity under Reliability.
 
 \paragraph{Interoperability}
 All information sent from the server should follow the same format (JSON) so that the front-end only will have to communicate with the back-end using the same format. This means that the back-end will have to convert XML from some of the external systems into JSON. With this approach the front-end will also remain separated from the back-end, which will make it easier to exchange parts of the GUI later on as it is
@@ -351,10 +351,10 @@ For valid interoperability it is necessary that all response from the back-end t
 Even though the system isn't a part of a critical operation, the new and improved system will have performance efficiency as an important model of quality. The reasoning behind this is that the customer wanted to give users an experience of a more responsive system. In addition to this the server has to utilize minimal resources, as it is going to be ran in a resource restricted environment. 
 
 \paragraph{Time behaviour}
-As of now the time to load new content from the content providers to the application is slow and random. Because of this there are no exact estimation on the time used to pull content from Digitalt Fortalt and Instagram, but the application should use no more than \textit{300 seconds} to pull new content. This fairly high time frame is due to processing times at the external APIs. 300 seconds is therefore the time limit given to the system within it should have pulled new stories/pictures from Digitalt Fortalt/Instagram. The time limitations set for the back-end to respond to requests is set to \textit{120 seconds} for places (with an empty cache) and \textit{15 seconds} for places (with a full cache), stories, images and sounds. Unrelated to the goal of performance issue; the user should be informed when the application is processing information.
+As of now the time to load new content from the content providers to the application is slow and random. Because of this there are no exact estimation on the time used to pull content from Digitalt Fortalt and Instagram, but the application should use no more than \textit{300 seconds} to pull new content. This fairly high time frame is due to processing times at the external APIs. 300 seconds is therefore the time limit for the system to have pulled new stories/pictures from Digitalt Fortalt/Instagram. The time limitations set for the back-end to respond to requests is set to \textit{120 seconds} for places (with an empty cache) and \textit{15 seconds} for places (with a full cache), stories, images and sounds. Unrelated to the goal of performance issue; the user should be informed when the application is processing information.
 
 \paragraph{Resource utilization}
-Requirements related to resources utilized by the application when performing it's tasks, are already met by the prototype. The new version of the application are bound also bound by these goals, which means that new functions must maintain minimal and  Specifically the back-end is bound by the resources provided by the free service of the Heroku Cloud Platform. One of the implications of this is that the cache cannot be written to disk as the file-system on the disk is read-only. Without writing capabilities or database access, the back-end will have problems improving the time behaviour for place-loading when the cache is empty.
+Requirements related to resources utilized by the application when performing it's tasks, are already met by the prototype. The new version of the application are bound also by these goals, which means that new functions must maintain minimal usage. Specifically the back-end is bound by the resources provided by the free service of the Heroku Cloud Platform. One of the implications of this is the cache that cannot be written to disk as the file-system on the disk is read-only. Without writing capabilities or database access, the back-end will have problems improving the time behaviour for place-loading when the cache is empty.
 
 \paragraph{Capacity}
 
@@ -372,7 +372,7 @@ Since the application is going to be online without a team responsible for the t
 \paragraph{Maturity}
 Because of the early versioning of the application, the aspect of maturity is not important for this application. Users of the application are few, and they know what the capabilities of the application is. This means that a user follows a rigid pattern and within that pattern, the probability to execute faults is almost non-existing. Functionality outside that pattern is not supported and thereby it's impossible to execute mistakes.
 
-Testing of this should be done by simulating a high number of calls towards the server. The simulations should be done as threads as this will better simulate a real-life situation these are not done sequentially.
+Testing of this should be done by simulating a high number of calls towards the server. The simulations should be done as threads as this will better simulate a real-life situation which is not done sequentially.
 
 \paragraph{Availability}
 An important characteristic of the application is that it has to be available just as often as a professional service. This means that under normal circumstances, the uptime of the back-end and front should be 90 \% or above.
@@ -390,7 +390,7 @@ Since most of the system will be ran without a maintainer, the system shoud reco
 Recoverability-testing is done together with testing the fault tolerance, by monitoring the time the system uses to become operational after critical components are disabled and reactivated. Because of the existing architecture it is already known that the system will fail when certain components are deactivated so a fail-proof system is not theoretically possible.
 
 \subsubsection{Portability}
-One of the main reasons for using the Titanium-framework is that it is possible to code once, and compile it down to native applications for a number of smartphone environments. Because of iOS developer requirements, the former application has unfortunately never been tested on iOS, which is a goal set by the customer.
+One of the main reasons for using the Titanium-framework is that it is possible to code and compile it down to native applications for a number of smartphone environments. Because of iOS developer requirements, the former application has unfortunately never been tested on iOS, which is a goal set by the customer.
 
 \paragraph{Adaptability}
 One main constraint for obtaining a high grade of adaptability is to not use platform specific GUI elements front-end. This should lead to an identical codebase front-end, which can compile down to all the Titanium-supported platforms. With this method it is also possible to ensure some degree of compatibility against new platform versions, since the mobile platforms usually have support for older platforms. Of course this is not satisfied by the system, but by the developers of a given mobile platform. Therefore this support is not guaranteed.  
@@ -399,7 +399,7 @@ One main constraint for obtaining a high grade of adaptability is to not use pla
 Since the system is supposed to be a native application, it should be possible to install the application from platform-specific repositories (i.e: Play and iOS-store). Since the program is still under development this won't be accomplished though, and the requirement is to deliver a file which can be installed on phones meant for development (debugging enabled).
 
 \paragraph{Replaceability}
-A above, the system should update through a platform specific service. Since the system isn't a part the official repositories yet, replacement of the application should also be through debugging enabled devices. 
+As above, the system should update through a platform specific service. Since the system isn't a part of the official repositories yet, replacement of the application should also be through debugging enabled devices. 
 
 Note: Since the program builds down to native applications under 15MB, it should be a fairly small job to make the program available on the different platform-specific repositories.  
 
