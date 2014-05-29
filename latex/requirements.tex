@@ -224,7 +224,7 @@ Actors & Primary User \\ \hline
 Preconditions & \begin{enumerate} \item 1,2,3 \end{enumerate} \\ \hline
 Stimulus-Response & \begin{enumerate} \item The user clicks on a view \item The user changes views at will \item Content  \end{enumerate} \\ \hline
 Alternate Flow & \begin{itemize} \item[1a] If the user clicks a button for the already chosen view, nothing should happen. \end{itemize} \\ \hline
-Functional Requirement & For navigation in the place view, the user should be presented with different buttons (or tabs) so that the user easily can navigate between content and still have an overview of what types of content the application provides. Preview picture gallery when places are grouped together. Add description about place, own vire for sound. Be able to show place location on map from story. Be able to filter stories by tag, author, institution video/no video. preview stories by sound from SoundCloud \\ \hline
+Functional Requirement & For navigation in the place view, the user should be presented with different buttons (or tabs) so that the user easily can navigate between content and still have an overview of what types of content the application provides. Preview picture gallery when places are grouped together. Add description about place, own tab for sound. Be able to show place location on map from story. Be able to filter stories by tag, author, institution video/no video. preview stories by sound from SoundCloud \\ \hline
 Related Use Cases & 3 \\ \hline
 Dependencies & none \\ \bottomrule
 
@@ -247,7 +247,7 @@ Actors & Internal System \\ \hline
 Preconditions & \begin{enumerate} \item 1,2,3 \end{enumerate} \\ \hline
 Stimulus-Response & \begin{enumerate} \item Access the server as done in the previous version of the system \item Provide input to the server “placeId=” \item Content is loaded and a JSON-object is replied by the server \end{enumerate} \\ \hline
 Alternate Flow & \begin{itemize} \item[1a] If the user clicks a button for the already chosen view, nothing should happen. \end{itemize} \\ \hline
-Functional Requirement & The API for DF has to be changed, without changing the behaviour of the response from the server. In addition to this the server will respond with a new container for the audio content. Other content should be handled as normal. Retrieve collection from DF based on hash-tag and location.  Retrieve stories in a collection from DF based on tags. Open info retrieved from SoundCloud based on hashtags or location. Retrieve information from Instagram based on Hash-tags. Be able to get tinyUrls to different content. \\ \hline
+Functional Requirement & The API for DF has to be changed, without changing the behaviour of the response from the server. In addition to this the server will respond with a new container for the audio content. Other content should be handled as normal. Retrieve collection from DF based on hash-tag and location.  Retrieve stories in a collection from DF based on tags. Open info retrieved from SoundCloud based on hash-tags or location. Retrieve information from Instagram based on Hash-tags. Be able to get tinyUrls to different content. \\ \hline
 Related Use Cases & Null \\ \hline
 Dependencies & none \\ \bottomrule
 
@@ -335,7 +335,7 @@ Dependencies & none \\ \bottomrule
 Guided by ISO:25010, meetings with our supervisor and the feature list given to us by the customer the product qualities that are important for the project is compatibility, performance efficiency, reliability and portability.
 
 \subsubsection{Compatibility}
-There are a lot of information processing done by the backend, and the information is derived from multiple sources and in different formats. It is therefore important that the backend processes this information into a standarized format. Since there already exists code, new additions should be comatible  with the old code.
+There are a lot of information processing done by the back-end, and the information is derived from multiple sources and in different formats. It is therefore important that the back-end processes this information into a standardized format. Since there already exists code, new additions should be compatible  with the old code.
 
 \paragraph{Co-existence}
 Since the architecture behind the system relies on a clients (V) and a server (MC), it has to be possible for the clients to share the resources from the server. This means that several instances of clients should be able to be functional at the same time.
@@ -345,16 +345,16 @@ The test for co-existence consists accessing the server at the same time with mu
 \paragraph{Interoperability}
 All information sent from the server should follow the same format (JSON) so that the front-end only will have to communicate with the back-end using the same format. This means that the back-end will have to convert XML from some of the external systems into JSON. With this approach the front-end will also remain separated from the back-end, which will make it easier to exchange parts of the GUI later on as it is
 
-For valid interoperability it is necessery that all respones from the back-end to the front-end is in the JSON-format.
+For valid interoperability it is necessary that all response from the back-end to the front-end is in the JSON-format.
 
 \subsubsection{Performance Efficiency}
-Even though the system isn't a part of a critical operation, the new and improved system will have performance efficiency as an important model of quality. The reasoning behind this is that the customer wanted to give users an experience of a more responsive system. In addition to this the server has to utilize minimal resources, as it is going to be ran in a resource restriced envirment. 
+Even though the system isn't a part of a critical operation, the new and improved system will have performance efficiency as an important model of quality. The reasoning behind this is that the customer wanted to give users an experience of a more responsive system. In addition to this the server has to utilize minimal resources, as it is going to be ran in a resource restricted environment. 
 
 \paragraph{Time behaviour}
 As of now the time to load new content from the content providers to the application is slow and random. Because of this there are no exact estimation on the time used to pull content from Digitalt Fortalt and Instagram, but the application should use no more than \textit{300 seconds} to pull new content. This fairly high time frame is due to processing times at the external APIs. 300 seconds is therefore the time limit given to the system within it should have pulled new stories/pictures from Digitalt Fortalt/Instagram. The time limitations set for the back-end to respond to requests is set to \textit{120 seconds} for places (with an empty cache) and \textit{15 seconds} for places (with a full cache), stories, images and sounds. Unrelated to the goal of performance issue; the user should be informed when the application is processing information.
 
 \paragraph{Resource utilization}
-Requirements related to resources utilized by the application when performing it's tasks, are already met by the prototype. The new version of the application are bound also bound by these goals, which means that new functions must maintain minimal and  Specifically the back-end is bound by the resources provided by the free service of the Heroku Cloud Platform. One of the implications of this is that the cache cannot be written to disk as the filesystem on the disk is read-only. Without writing capabilities or database access, the back-end will have problems improving the time behaviour for place-loading when the cache is empty.
+Requirements related to resources utilized by the application when performing it's tasks, are already met by the prototype. The new version of the application are bound also bound by these goals, which means that new functions must maintain minimal and  Specifically the back-end is bound by the resources provided by the free service of the Heroku Cloud Platform. One of the implications of this is that the cache cannot be written to disk as the file-system on the disk is read-only. Without writing capabilities or database access, the back-end will have problems improving the time behaviour for place-loading when the cache is empty.
 
 \paragraph{Capacity}
 
@@ -387,16 +387,16 @@ Testing for this should be done by deactivating components and then monitor if a
 \paragraph{Recoverability}
 Since most of the system will be ran without a maintainer, the system shoud recover quickly on faults by its own.
 
-Recoverability-testing is done together with testing the fault tolerance, by monitoring the time the system uses to become operational after critical components are disabled and reactivated. Beacuse of the existing architecture it is already known that the system will fail when certain components are deactivated so a fail-proof system is not theoretically possible.
+Recoverability-testing is done together with testing the fault tolerance, by monitoring the time the system uses to become operational after critical components are disabled and reactivated. Because of the existing architecture it is already known that the system will fail when certain components are deactivated so a fail-proof system is not theoretically possible.
 
 \subsubsection{Portability}
-One of the main reasons for using the Titanium-framework is that it is possible to code once, and compile it down to native applications for a number of smartphone environments. Beacuse of iOS developer requirements, the former application has unfortunately never been tested on iOS, which is a goal set by the customer.
+One of the main reasons for using the Titanium-framework is that it is possible to code once, and compile it down to native applications for a number of smartphone environments. Because of iOS developer requirements, the former application has unfortunately never been tested on iOS, which is a goal set by the customer.
 
 \paragraph{Adaptability}
 One main constraint for obtaining a high grade of adaptability is to not use platform specific GUI elements front-end. This should lead to an identical codebase front-end, which can compile down to all the Titanium-supported platforms. With this method it is also possible to ensure some degree of compatibility against new platform versions, since the mobile platforms usually have support for older platforms. Of course this is not satisfied by the system, but by the developers of a given mobile platform. Therefore this support is not guaranteed.  
 
 \paragraph{Installability}
-Since the system is supposed to be a native application, it should be possible to install the application from platform-specific repositories (i.e: Play and iOS-store). Since the program is still under development this won't be accomplished though, and the requirment is to deliver a file which can be installed on phones meant for development (debugging enabled).
+Since the system is supposed to be a native application, it should be possible to install the application from platform-specific repositories (i.e: Play and iOS-store). Since the program is still under development this won't be accomplished though, and the requirement is to deliver a file which can be installed on phones meant for development (debugging enabled).
 
 \paragraph{Replaceability}
 A above, the system should update through a platform specific service. Since the system isn't a part the official repositories yet, replacement of the application should also be through debugging enabled devices. 

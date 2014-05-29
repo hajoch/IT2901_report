@@ -67,7 +67,7 @@
 
 \newcommand*{\SignatureTwo}[2]{%
     \par\noindent\makebox[2.5in]{\hrulefill} \hfill\makebox[2.5in]{\hrulefill}%
-    \par\noindent\makebox[2.5in][l]{#1}      \hfill\makebox[2.5in][l]{#2}%
+    \par\noindent\makebox[2.5in][l]{#1}      \hfill\makebox[2.5in][l]{\hspace{0.05in}#2}%
 }%
 
 \lhead{}
@@ -154,14 +154,24 @@
 \thispagestyle{empty}
 
 This report is the documented result of the course ”IT2901 - Informatikk prosjektarbeid II” in the spring of 2014. Our group consisted of six NTNU students from the Department of Computer and Information Science.
-\\
+
+
 We would like to thank our contact person at SINTEF, Jacqueline Floch. Throughout this semester, she have been incredibly supportive and helpful in all aspects. She is truly a spirited person with an astounding dedication to this project. It has been a lot of fun working with her. Additionally, we would also like to thank our supervisor Moshen Anvaari for giving us great feedback and being a cool guy in general.
+
 \\
 \\
+
+
+\vspace{0.3in}
 Trondheim, 29th of May, 2014
 
-\SignatureTwo{Øyvind Hellenes}{Vegard Storm}
+\vspace{1in}
 
+\SignatureTwo{Øyvind Hellenes}{Vegard Storm}
+\vspace{0.5in}
+\SignatureTwo{Jørgen Rugelsjøen Wikdahl}{Jon-Andre Brurberg}
+\vspace{0.5in}
+\SignatureOne{Hallvard Jore Christensen}
 
 %\Signature{Trondheim}{Øyvind Hellenes}{Vegard Storm}{Tor Barstad}{Jørgen Rugelsjøen Wikdahl}{Jon-Andre Brurberg}{Hallvard Jore Christensen}
 %\renewcommand\Signature[7]{}
@@ -169,8 +179,10 @@ Trondheim, 29th of May, 2014
 
 
 \begin{abstract}
-Through this project SINTEF wanted to further develop a multi-platform application for handheld devices called Stedr. The aim of the project was to add more important functionality to the application, increase usability and generally improving it in all aspects. In this report we will describe the whole process from preliminary work and planning to the process and then present the final product with test-results. The application is written in Titanium Studio using mainly XML, Java and JavaScript. The application makes use of many different APIs and frameworks to make use of existing services to reduce necessary maintenance. This was requested by the customer.
-During the course of the project we experienced and overcame many challenges. In the end we reached all our goals and produced a result we are very happy with.
+<<<<<<< HEAD
+Through this project SINTEF wanted to further develop a multi-platform application for handheld devices called Stedr. The aim of the project was to add more important functionality to the application, increase usability and generally improving it in all aspects. In this report we will describe the whole process from preliminary work and planning to the process and then present the final product with test-results. The application is written in Titanium Studio and Play Framework using mainly XML, Java and JavaScript. The application makes use of many different APIs and frameworks to make use of existing services to reduce necessary maintenance. This was requested by the customer.
+During the course of the project we experienced and overcame many challenges, but in the end we reached all of our goals and ended up with a result we are very happy with.
+
 \end{abstract}
 
 \restoregeometry
@@ -220,6 +232,9 @@ During the course of the project we experienced and overcame many challenges. In
 \section{Attachments}
 \thispagestyle{plain}
 
+\subsection{Class diagrams}
+\label{sec:classDiagrams}
+
 \begin{figure}[!h]
 \centering
 \includegraphics[width=1 \textwidth] {classFront1.png}
@@ -237,13 +252,37 @@ During the course of the project we experienced and overcame many challenges. In
 \includegraphics[width=1.3\textwidth, angle=270] {classBack.jpg}
 \caption{Class diagram for back-end}
 \end{figure}
+\clearpage
+
+\subsection{Screenshots}
+
+\begin{center}
+\begin{tabular}{cc}
+	 	\includegraphics[width=0.35 \textwidth]{res/ScreenShot1.jpg}	& 	
+	 	\includegraphics[width=0.35 \textwidth]{res/ScreenShot2.jpg}\\
+	 	\includegraphics[width=0.35 \textwidth]{res/ScreenShot3.jpg}	&
+	 	\includegraphics[width=0.35 \textwidth]{res/ScreenShot4.jpg}\\
+\end{tabular}
+\end{center}
+
+\begin{center}
+\begin{tabular}{cc}
+	 	\includegraphics[width=0.35 \textwidth]{res/ScreenShot5.jpg}	& 	
+	 	\includegraphics[width=0.35 \textwidth]{res/ScreenShot6.jpg}\\
+	 	\includegraphics[width=0.35 \textwidth]{res/ScreenShot7.jpg}	&
+	 	\includegraphics[width=0.35 \textwidth]{res/ScreenShot8.jpg}\\
+\end{tabular}
+\end{center}
 
 \clearpage
+
+\/*
 \thispagestyle{plain}
 \printbibheading
 \printbibliography[type=book,heading=subbibliography,title={Book Sources}]
 \printbibliography[nottype=book,heading=subbibliography,title={Other Sources}]
 \clearpage
+*/
 
 %Appendices
 \newpage
@@ -308,34 +347,27 @@ In the following week it will be difficult to keep up the momentum from last wee
 
 \input{meetingExample}
 
-\section{Screenshots}
+\section{Other}
 
-\begin{center}
-\begin{tabular}{cc}
-	 	\includegraphics[width=0.35 \textwidth]{res/ScreenShot1.jpg}	& 	
-	 	\includegraphics[width=0.35 \textwidth]{res/ScreenShot2.jpg}\\
-	 	\includegraphics[width=0.35 \textwidth]{res/ScreenShot3.jpg}	&
-	 	\includegraphics[width=0.35 \textwidth]{res/ScreenShot4.jpg}\\
-\end{tabular}
-\end{center}
+\subsection{Mock-ups}
+\label{sec:mockups}
 
-\begin{center}
-\begin{tabular}{cc}
-	 	\includegraphics[width=0.35 \textwidth]{res/ScreenShot5.jpg}	& 	
-	 	\includegraphics[width=0.35 \textwidth]{res/ScreenShot6.jpg}\\
-	 	\includegraphics[width=0.35 \textwidth]{res/ScreenShot7.jpg}	&
-	 	\includegraphics[width=0.35 \textwidth]{res/ScreenShot8.jpg}\\
-\end{tabular}
-\end{center}
+In the beginning of the project we did made mockups to describe our ideas and thoughts. These was later dismissed as the project progressed, but we implemented ideas from them later on, so even though they are not directly relevant to the final project, we feel they are relevant enough for the subject, in terms of how time were spent etc, to include them in the report.
 
-\begin{center}
-\begin{tabular}{cc}
-	 	\includegraphics[width=0.35 \textwidth]{res/mockup1.png}	& 	
-	 	\includegraphics[width=0.35 \textwidth]{res/mockup2.png}\\
-	 	\includegraphics[width=0.35 \textwidth]{res/mockup3.png}	&
-\\
-\end{tabular}
-\end{center}
+\begin{figure}[!h]
+\centering
+\includegraphics[width=0.9 \textwidth] {res/mockup1.png}
+\end{figure}
+
+\begin{figure}[!h]
+\centering
+\includegraphics[width=0.9 \textwidth] {res/mockup2.png}
+\end{figure}
+
+\begin{figure}[!h]
+\centering
+\includegraphics[width=0.9 \textwidth] {res/mockup3.png}
+\end{figure}
 
 
 \end{appendices}
