@@ -185,7 +185,7 @@ Acceptance testing is one of the last levels of the software testing process. Th
 
 On May 14. during one of our last meetings we sat down with Jaqueline Floch for the final acceptance test of our system. Since the project has been based on further developing features and improving the graphical user interface to increasing usability, both these has to be included in the acceptance test.
 
-For the main test we had a feature based acceptance test where we went through the requirement list. Not to say that usability is not as important, but our customer had received the latest build almost every week in the later stages of the project. Through this, the customer have conducted something similar to a usability based acceptance test regularly throughout the project, to which we received feedback \todo{(Examples of feedback can be found in Appendix X)}. Because of this we did not have the same need for a usability based user acceptance test, which we know is the way many of the other groups have chosen to handle the test, but Jaqueline Floch had the app tested by four of her colleagues, which all gave positive feedback. If there had been any crucial shortcomings it probably would have been pointed out.
+For the main test we had a feature based acceptance test where we went through the requirement list. Not to say that usability is not as important, but our customer had received the latest build almost every week in the later stages of the project. Through this, the customer have conducted something similar to a usability based acceptance test regularly throughout the project, to which we received feedback. Because of this we did not have the same need for a usability based user acceptance test, which we know is the way many of the other groups have chosen to handle the test, but Jaqueline Floch had the app tested by four of her colleagues, which all gave positive feedback. If there had been any crucial shortcomings it probably would have been pointed out.
 
 The test was conducted by going through the requirement list sorted by priority and individually receiving a verdict on acceptance. The individual requirement either reviewed \texttt{Pass, fail, outdated} or \texttt{cancel} if the requirement was pulled. The latter was the case on a lot of the requirements with lower priority since we had little time and the customer wanted us to focus on the more important tasks.
 
@@ -268,7 +268,7 @@ Average:
 With all results clocking in under 150 seconds, and our goal being under 300 seconds, we are very pleased with the results and can happily see our app passing this test. Considering the version of the app we received sometimes needed multiple days for the results to appear, it is needless to say there have been a massive improvement.
 
 
-Another important part of the performance efficiency are the application's data usage. Blowing the users' data limit and potentially taking a large part in increasing their phone-bill is something we want to avoid, and to avoid that we have implemented a data usage restraint. This restraint is set through the equation \ref{eq:DownloadLimit} in \ref{sec:ProductQuality}.
+Another important part of the performance efficiency are the application's data usage. Blowing the users' data limit and potentially taking a large part in increasing their phone-bill is something we want to avoid, and to avoid that we have implemented a data usage restraint. This restraint is set through equation (\ref{eq:DownloadLimit}) in section \ref{sec:ProductQuality}.
 
 We tested the data usage to make sure our application met our standard. We measured this roaming unconnected to any WiFi-hotspots while running the app.\\
 
@@ -400,24 +400,3 @@ The multiplatform aspect of the project has played a major part in the developme
 \caption{Portability Testing}
 \label{tab:Portability Testing}
 \end{table}
-
-
-\/*
-
-\subsubsection{Acceptance testing}
-
-
-
-\begin{center}
-\begin{tabular}{ i{4cm} ||  i{10cm}} \toprule
-\multicolumn{2}{c}{\textbf{Select a place}} \\ \hline
-Related test case (ID) & T-F1 \\ \hline
-Test Description & We asked the user to open the app and browse the map to find a desired ``place''. \\ \hline
-Steps & \begin{enumerate} \item Open the application \item Wait for response \item Browse the map and find a place of your choosing \item Select place by clicking on pinpoint \end{enumerate} \\ \hline
-Result & The user had little issue doing the test, without hesitation or any questions, completing the task with ease. The response we got was that the interface was very intuitive and that little effort was needed to understand how to proceed.  \\ \hline
-Verdict & Passed \\ \bottomrule
-\end{tabular}
-\end{center}
-
-*/
-
