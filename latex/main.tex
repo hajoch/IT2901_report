@@ -60,6 +60,15 @@
 }
 
 */
+\newcommand*{\SignatureOne}[1]{%
+    \par\noindent\makebox[2.5in]{\hrulefill} %
+    \par\noindent\makebox[2.5in][l]{#1}      %
+}%
+
+\newcommand*{\SignatureTwo}[2]{%
+    \par\noindent\makebox[2.5in]{\hrulefill} \hfill\makebox[2.5in]{\hrulefill}%
+    \par\noindent\makebox[2.5in][l]{#1}      \hfill\makebox[2.5in][l]{#2}%
+}%
 
 \lhead{}
 \rhead{\rightmark}
