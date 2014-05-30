@@ -121,7 +121,7 @@ Note that the first server commit to a new Heroku instance is so slow that you c
 
 \subsection{Front-end}
 
-The frontend is developed using Appcelerator Titanium.  Similar to the backend, the source code itself is maintained on a GitHub account provided by Sintef called TagCloud. Before continuing this means that a couple of prerequisites has to be fulfilled by the developer.
+The front-end is developed using Appcelerator Titanium.  Similar to the back-end, the source code itself is maintained on a GitHub account provided by SINTEF called TagCloud. Before continuing this means that a couple of prerequisites has to be fulfilled by the developer.
 
 \paragraph{The developer should have:}
 \begin{itemize}
@@ -140,15 +140,15 @@ Download \href{http://www.appcelerator.com/titanium/}{Appcelerator Titanium}.
 
 Install titanium by following the installation wizard. When titanium is finished installing, open it. Titanium will ask you to choose a workspace location, where your projects will be stored. You then have to log in with your Appcelerator-account.
 
-Titanium will then most likely attempt to install software development kit (SDK) for Android. If it does not, you can do so via the dashboard. Click the “Get Started” tab and scroll to “Configure Native SDKs”, click Android SDK and make sure it is updated. The Tizen and Blackberry deveopment kits are not necessary for this application.
+Titanium will then most likely attempt to install software development kit (SDK) for Android. If it does not, you can do so via the dashboard. Click the “Get Started” tab and scroll to “Configure Native SDKs”, click Android SDK and make sure it is updated. The Tizen and Blackberry development kits are not necessary for this application.
 
-If you have a Mac, you should be able to install the iOS SDK aswell. You need this if you are testing the application on an iOS device.
+If you have a Mac, you should be able to install the iOS SDK as well. You need this if you are testing the application on an iOS device.
 
 \begin{center}
 \includegraphics[scale=0.3]{guide/f1.png} 
 \end{center}
 
-Now we are ready to import the stedr project.
+Now we are ready to import the Stedr project.
 1. Right click in the project explorer and choose “Import”.
 2. Choose the “Existing Folder as New Project”-option under “General” and press “Next”.
 
@@ -156,7 +156,7 @@ Now we are ready to import the stedr project.
 \includegraphics[scale=0.45]{guide/f2.png} 
 \end{center}
 
-3. Click browse and choose the folder where you downloaded stedr and press “OK”. 
+3. Click browse and choose the folder where you downloaded Stedr and press “OK”. 
 Example: C:/Users/Vegard/Documents/GitHub/VirtualWall/stedr
 4. Under “Project type” make sure Alloy is checked as primary and mobile is checked (This should happen automatically) and press “Finish” if everything is in order.
 
@@ -164,25 +164,25 @@ Example: C:/Users/Vegard/Documents/GitHub/VirtualWall/stedr
 \includegraphics[scale=0.45]{guide/f3.png} 
 \end{center}
 
-We are now ready to code or run the project. It might benefial to try to run the program on your device or an emulator before you start coding. If you have already done what is explained in the prerequisites and connected your device to the PC via USB, your phone should show up in the list of devices as desplayed below. If it does, select it and click “Run”. However if it does not, make sure you have the synchronization software for your device installed, and that you have “USB debugging” enabled in your phone settings. If you have issues finding the “USB debugging” option on your phone, it may be because you do not have access to developer settings. The easiest way to figure out how to get access is to google “how to access developer options on *your device*“.
+We are now ready to code or run the project. It might beneficial to try to run the program on your device or an emulator before you start coding. If you have already done what is explained in the prerequisites and connected your device to the PC via USB, your phone should show up in the list of devices as displayed below. If it does, select it and click “Run”. However if it does not, make sure you have the synchronization software for your device installed, and that you have “USB debugging” enabled in your phone settings. If you have issues finding the “USB debugging” option on your phone, it may be because you do not have access to developer settings. The easiest way to figure out how to get access is to google “how to access developer options on *your device*“.
 
 \begin{center}
 \includegraphics[scale=0.45]{guide/f4.png} 
 \end{center}
 
 \paragraph{Emulator:}
-It is possible to run the program on the official Android emulator, but it has some performence issues. An alternative emulator is the \href{https://shop.genymotion.com/index.php?controller=order-opc}{Genymotion}. Note that this emulator has some restrictions when asking for a free license, so make sure not to break their term of service. 
+It is possible to run the program on the official Android emulator, but it has some performance issues. An alternative emulator is the \href{https://shop.genymotion.com/index.php?controller=order-opc}{Genymotion}. Note that this emulator has some restrictions when asking for a free license, so make sure not to break their term of service. 
 
-Genymotion does not support Google Apps (i.e Google Map Servce) which is needed to run stedr. To install Google Apps on Genymotion, see this \href{https://www.youtube.com/watch?v=iCRNqCXGNK0}{screencast}. Before continuing it is also practical to add adb to the enviromental path, so that adb is accessible directly in the terminal. On Windows you can locate adb.exe under the folder platform-tools where you have installed the Android SDK. 
+Genymotion does not support Google Apps (i.e Google Map Service) which is needed to run stedr. To install Google Apps on Genymotion, see this \href{https://www.youtube.com/watch?v=iCRNqCXGNK0}{screencast}. Before continuing it is also practical to add adb to the environmental path, so that adb is accessible directly in the terminal. On Windows you can locate adb.exe under the folder platform-tools where you have installed the Android SDK. 
 
-With Genymotion started (the emulated device should be running) enter \texttt{adb install -r stedr.apk}. It is easiest to do this from the builder folder where, but you can probably send the location of the apk as a parameter. Notice the -r parameter, this is for reinstalling an apk which becomes necessery to use if the apk already is installed at the emulated device.
+With Genymotion started (the emulated device should be running) enter \texttt{adb install -r stedr.apk}. It is easiest to do this from the builder folder where, but you can probably send the location of the apk as a parameter. Notice the -r parameter, this is for reinstalling an apk which becomes necessary to use if the apk already is installed at the emulated device.
 
 \begin{center}
 \includegraphics[scale=0.7]{guide/f45.png} 
 \end{center}
 \clearpage
 \paragraph{Structure in Titanium alloy:}
-if you explore your newly added stedr project in the project explorer you will notice that under the app folder there are a nouber of subfolders.
+if you explore your newly added Stedr project in the project explorer you will notice that under the app folder there are a number of subfolders.
 
 \begin{wrapfigure}{l}{0.5\textwidth}
 \begin{center}
@@ -206,9 +206,9 @@ Additionally we have the assets folder, where media like pictures are stored; th
 
 
 \paragraph{Coding Example}
-In this example we assume that you have completed the backend example and uploaded it to the server stedr-beta.herokuapp.com.
+In this example we assume that you have completed the back-end example and uploaded it to the server stedr-beta.herokuapp.com.
 
-We will be creating a view that cointains a label with the value that we retrieve from the server stedr-beta.herokuapp.com/hello.json?name=world. If done right, the text “Hello World” should be deplayed on the screen when opening this view. 
+We will be creating a view that contains a label with the value that we retrieve from the server stedr-beta.herokuapp.com/hello.json?name=world. If done right, the text “Hello World” should be displayed on the screen when opening this view. 
 
 1. Begin by creating a new devTest.xml-file in the “views”-folder, a devTest.tss-file in the “styles”-folder and a devTest.js-file in the “controllers”-folder.
 
@@ -228,13 +228,13 @@ We will be creating a view that cointains a label with the value that we retriev
 \includegraphics[scale=0.45]{guide/f8.png} 
 \end{center}
 
-3. Creating the JavaScript-file. This is where we retrieve the information from the server, aswell as set the text of the label.
+3. Creating the JavaScript-file. This is where we retrieve the information from the server, as well as set the text of the label.
 
 \begin{center}
 \includegraphics[scale=0.45]{guide/f9.png} 
 \end{center}
 
-Now all we have to do is open this view where we want it. For test purposes i will in this exaple set it to open automatically when you open the app. To do this, we have to go into the index.js file under controllers. Every window/view opens or closes through this class because this is where the window stack is. To make sure the test view is shown automatically, scroll down to the bottom of index.js and add it right above \$.index.open() as shown below:
+Now all we have to do is open this view where we want it. For test purposes i will in this example set it to open automatically when you open the app. To do this, we have to go into the index.js file under controllers. Every window/view opens or closes through this class because this is where the window stack is. To make sure the test view is shown automatically, scroll down to the bottom of index.js and add it right above \$.index.open() as shown below:
 
 \begin{center}
 \includegraphics[scale=0.45]{guide/f10.png} 
@@ -248,4 +248,4 @@ Now if you save and run you should see something like this when you start the ap
 \end{wrapfigure}
 
 
-We have now gone over the basics of how to create a view aswell as retrieving information from the server. To further understand how to develop stedr using Titanium, looking at and understanding the previous code is essential. The documentation available on the \href{http://docs.appcelerator.com/titanium/3.0/}{Appcelerator website} is also extremely helpful when learning about Titanium:
+We have now gone over the basics of how to create a view as well as retrieving information from the server. To further understand how to develop Stedr using Titanium, looking at and understanding the previous code is essential. The documentation available on the \href{http://docs.appcelerator.com/titanium/3.0/}{Appcelerator website} is also extremely helpful when learning about Titanium:
