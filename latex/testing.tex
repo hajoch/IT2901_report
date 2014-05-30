@@ -180,6 +180,32 @@ Severity & Medium\\ \bottomrule
 
 \subsection{Test Execution}
 \label{sec:TestExecution}
+\subsubsection{System Testing}
+
+During the final stages of the development, it was performed a system test after integrating all of the developed components. This was an important step done before the acceptance testing, to see that all of the components developed by different team members and the former development team worked together. Since we did not have the resources it was impossible to let an external team do the testing, but to emulate some sort of indipendence to the system the tests were done by a group member who had been less involved in the development of the client and never tried the client on a smartphone. This of course is a weakness in the testing, since the tester had a general knowledge of the system worked and also a basic idea of the client from using the system on a smartphone emulator.
+
+A summary of the test results is shown in the table below, and an example from the test log can be found in the appendix.
+
+\begin{table}[!htp]
+\begin{center}
+	\begin{tabular}{ | l | l | l | }
+	\hline
+	 \ID	 	& Pass 		& Comment 	\\ \hline
+	T-F1		&Unknown		& Valid with full cache, not valid when empty cache	\\ \hline
+	T-F2		&Pass		& None	\\ \hline
+	T-F3		&Pass		& None	\\ \hline
+	T-F4		&Pass		& None	\\ \hline
+	T-F5		&Pass		& None 	\\ \hline
+	T-F6		&Pass		& None 	\\ \hline
+	T-F7		&Pass		& None 	\\ \hline
+	T-F6		&Fail			& This feature was declared infeasible  	\\ 
+	 \hline
+ 	 \end{tabular}
+\end{center}
+\caption{System Testing: Validity}
+\label{tab:System Testing: Validity}
+\end{table}
+
 \subsubsection{Acceptance Testing}
 
 Acceptance testing is one of the last levels of the software testing process. The purpose of such testing is to evaluate the system's compliance with the given requirements to check whether it is acceptable for delivery. Hence the name acceptance testing.
