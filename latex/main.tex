@@ -40,6 +40,14 @@
 %preface signature design
 \usepackage{array}
 
+\newcommand{\blankpage}{
+\newpage
+\thispagestyle{empty}
+\mbox{}
+\newpage
+}
+
+
 \/*
 
 \newcommand\Signature[7]{\par\bigskip
@@ -149,6 +157,7 @@
 \begin{document}
 \input{titlepage}
 
+\blankpage
 
 \section*{Preface}
 \thispagestyle{empty}
@@ -172,8 +181,9 @@ Trondheim, 29th of May, 2014
 
 %\Signature{Trondheim}{Øyvind Hellenes}{Vegard Storm}{Tor Barstad}{Jørgen Rugelsjøen Wikdahl}{Jon-Andre Brurberg}{Hallvard Jore Christensen}
 %\renewcommand\Signature[7]{}
-\cleardoublepage
 
+\clearpage
+\blankpage
 
 \begin{abstract}
 
@@ -181,7 +191,7 @@ Through this project SINTEF wanted to further develop a multi-platform applicati
 During the course of the project we experienced and overcame many challenges, but in the end we reached all of our goals and ended up with a result we are very happy with.
 
 \end{abstract}
-
+\blankpage
 \restoregeometry
 
 %\cleardoublepage
@@ -252,32 +262,35 @@ During the course of the project we experienced and overcame many challenges, bu
 \clearpage
 
 \subsection{Screenshots}
-These screenshots displays some usage examples of the app. \\
-\\
-A: This view shows a map of all the places in Trondheim related to the Collection Institutions in Kalvskinnet. \\
-B: In this view we have selected the Collection Institutions in Kalvskinnet. By doing this we can see all the stories and places accoiated with this Collection. \\
-C: This is the Collection view. By clicking this, we can see all the collections that is visable within the map range we have selected. \\
-D: This view shows a story from Digitalt Fortalt. As you can see, there is also a video available for this story in addition to a picture. \\
-E: This is the Places view, showing all media that is connected to Torvet in Trondheim. In this case we are presented with the choice of either adding a sound, or listening to an existing sound through Soundcloud. \\
-F: This is the picture view. Here you can add or look at pictures from Flicr and Instagram. \\
-G: This is the story view. Here you can add or look at stories from Digitalt Fortalt. \\
-H: This view shows a map of Trondheim. In this case we have selected Torvet. By selecting a marker, we get a brief description of the place. \\
+
+These screenshots displays some usage examples of the app.
+
+\begin{itemize}
+\item[A] This view shows a map of all the places in Trondheim related to the Collection Institutions in ``Kalvskinnet''.
+\item[B] In this view we have selected the Collection Institutions in Kalvskinnet. By doing this we can see all the stories and places associated with this Collection.
+\item[C] This is the Collection view. By clicking this, we can see all the collections that is visible within the map range we have selected.
+\item[D] This view shows a story from Digitalt Fortalt. As you can see, there is also a video available for this story in addition to a picture.
+\item[E] This is the Places view, showing all media that is connected to ``Torvet'' in Trondheim. In this case we are presented with the choice of either adding a sound, or listening to an existing sound through SoundCloud.
+\item[F] This is the picture view. Here you can add or look at pictures from Flicr and Instagram.
+\item[G] This is the story view. Here you can add or look at stories from Digitalt Fortalt.
+\item[H] This view shows a map of Trondheim. In this case we have selected ``Torvet''. By selecting a marker, we get a brief description of the place.
+\end{itemize}
 
 \begin{center}
 \begin{tabular}{cc}
-	 	\includegraphics[width=0.35 \textwidth]{res/ScreenShot1.jpg}	& 	
-	 	\includegraphics[width=0.35 \textwidth]{res/ScreenShot2.jpg}\\
-	 	\includegraphics[width=0.35 \textwidth]{res/ScreenShot3.jpg}	&
-	 	\includegraphics[width=0.35 \textwidth]{res/ScreenShot4.jpg}\\
+	 	\textbf{a)\hspace{0.2in}} \includegraphics[width=0.35 \textwidth]{res/ScreenShot1.jpg}	& 	
+	 	\textbf{b)\hspace{0.2in}}\includegraphics[width=0.35 \textwidth]{res/ScreenShot2.jpg}\\
+	 	\textbf{c)\hspace{0.2in}}\includegraphics[width=0.35 \textwidth]{res/ScreenShot3.jpg}	&
+	 	\textbf{d)\hspace{0.2in}}\includegraphics[width=0.35 \textwidth]{res/ScreenShot4.jpg}\\
 \end{tabular}
 \end{center}
 
 \begin{center}
 \begin{tabular}{cc}
-	 	\includegraphics[width=0.35 \textwidth]{res/ScreenShot5.jpg}	& 	
-	 	\includegraphics[width=0.35 \textwidth]{res/ScreenShot6.jpg}\\
-	 	\includegraphics[width=0.35 \textwidth]{res/ScreenShot7.jpg}	&
-	 	\includegraphics[width=0.35 \textwidth]{res/ScreenShot8.jpg}\\
+	 	\textbf{e)\hspace{0.2in}}\includegraphics[width=0.35 \textwidth]{res/ScreenShot5.jpg}	& 	
+	 	\textbf{f)\hspace{0.2in}}\includegraphics[width=0.35 \textwidth]{res/ScreenShot6.jpg}\\
+	 	\textbf{g)\hspace{0.2in}}\includegraphics[width=0.35 \textwidth]{res/ScreenShot7.jpg}	&
+	 	\textbf{h)\hspace{0.2in}}\includegraphics[width=0.35 \textwidth]{res/ScreenShot8.jpg}\\
 \end{tabular}
 \end{center}
 
